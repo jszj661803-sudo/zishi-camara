@@ -1,0 +1,7414 @@
+{
+  "version": "validation-100-v1",
+  "purpose": "H5真机体验验证：摄像头画面实时推荐姿势参考图，并给出拍摄评分诊断。",
+  "copyrightNote": "这些图片只做内部姿势规则验证，不作为正式产品公开素材。正式版需重绘/生成标准模特图。",
+  "templates": [
+    {
+      "templateId": "yf_pose_001",
+      "name": "显高全身照",
+      "portraitCategory": "portrait_18",
+      "sceneTags": [
+        "城市街拍",
+        "旅行打卡",
+        "草地公园"
+      ],
+      "shotType": "full_body",
+      "priority": "high",
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelPrompt": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "templateId": "yf_pose_002",
+      "name": "城市侧身街拍",
+      "portraitCategory": "portrait_02",
+      "sceneTags": [
+        "城市街拍",
+        "旅行打卡"
+      ],
+      "shotType": "full_body",
+      "priority": "high",
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelPrompt": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "templateId": "yf_pose_003",
+      "name": "走路抓拍",
+      "portraitCategory": "portrait_06",
+      "sceneTags": [
+        "城市街拍",
+        "旅行打卡",
+        "海边"
+      ],
+      "shotType": "full_body",
+      "priority": "high",
+      "poseRules": [
+        "慢慢往前走，步子不要太大。",
+        "手臂自然摆动，别刻意僵住。",
+        "可以边走边回头，表情放松。"
+      ],
+      "cameraRules": [
+        "镜头放在侧前方或背后侧方。",
+        "手机跟着人物轻轻平移。",
+        "预留人物前进方向的空间。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "left_front"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 10,
+        "tip": "抓拍时先保证清晰，虚化不要开太高。"
+      },
+      "beautyAdvice": {
+        "legLengthen": 20,
+        "waistSlim": 8,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "scoreHints": {
+        "composition": [
+          "前进方向有空间",
+          "人物完整",
+          "背景方向清楚"
+        ],
+        "pose": [
+          "步伐自然",
+          "手臂放松",
+          "回头自然"
+        ],
+        "deduct": [
+          "人物模糊",
+          "步子太僵",
+          "前方空间太少"
+        ]
+      },
+      "userTips": [
+        "走慢一点，脚刚落地时按快门。",
+        "预留人物前进方向的空间。",
+        "手机跟着人物轻轻平移，画面更有动感。"
+      ],
+      "standardModelPrompt": "标准青年女性模特，旅行街道或海边，走路抓拍，侧前方机位，腰部高度，人物慢走回头，画面预留前进方向。"
+    },
+    {
+      "templateId": "yf_pose_004",
+      "name": "镜子自拍",
+      "portraitCategory": "portrait_10",
+      "sceneTags": [
+        "镜子自拍",
+        "室内"
+      ],
+      "shotType": "half_body",
+      "priority": "high",
+      "poseRules": [
+        "手机放在脸侧或遮半脸。",
+        "另一只手可以托脸、撩发或拉衣领。",
+        "肩膀放松，脸微微侧一点。"
+      ],
+      "cameraRules": [
+        "手机略高于脸，更显脸小。",
+        "镜框尽量完整，脸不要贴边。",
+        "背景保持干净，避免杂物入镜。"
+      ],
+      "angleAdvice": {
+        "angleType": "high_selfie",
+        "cameraHeight": "eye_level",
+        "cameraDistance": "close_up",
+        "cameraPosition": "mirror_reflection"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 20,
+        "tip": "镜子自拍背景杂物多，轻度虚化会更干净。"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 18,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "素颜自然"
+      },
+      "scoreHints": {
+        "composition": [
+          "镜框完整",
+          "脸部不贴边",
+          "背景干净"
+        ],
+        "pose": [
+          "手机角度自然",
+          "手部动作轻",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "手机离脸太近",
+          "背景杂乱",
+          "脸被挡太多"
+        ]
+      },
+      "userTips": [
+        "手机略高于脸，眼睛看镜头上方一点。",
+        "另一只手可以托脸或轻碰头发。",
+        "背景有点乱时，打开轻度虚化。"
+      ],
+      "standardModelPrompt": "标准青年女性模特，干净圆镜前自拍，手机略高于脸，遮半脸，一只手托脸，浅色室内背景，轻度虚化。"
+    },
+    {
+      "templateId": "yf_pose_005",
+      "name": "花丛草地氛围照",
+      "portraitCategory": "portrait_15",
+      "sceneTags": [
+        "花丛",
+        "草地公园"
+      ],
+      "shotType": "three_quarter",
+      "priority": "high",
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelPrompt": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "templateId": "yf_pose_006",
+      "name": "海边旅行照",
+      "portraitCategory": "portrait_15",
+      "sceneTags": [
+        "海边",
+        "旅行打卡"
+      ],
+      "shotType": "full_body",
+      "priority": "high",
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelPrompt": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "templateId": "yf_pose_007",
+      "name": "夜景人像",
+      "portraitCategory": "portrait_17",
+      "sceneTags": [
+        "夜景"
+      ],
+      "shotType": "half_body",
+      "priority": "high",
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelPrompt": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "templateId": "yf_pose_008",
+      "name": "咖啡店窗边坐姿",
+      "portraitCategory": "portrait_05",
+      "sceneTags": [
+        "咖啡店",
+        "室内氛围"
+      ],
+      "shotType": "three_quarter",
+      "priority": "medium",
+      "poseRules": [
+        "坐姿身体微侧，膝盖不要正对镜头。",
+        "双手可以抱膝、拿杯子或轻放腿上。",
+        "脸朝窗边光，眼神看镜头或窗外。"
+      ],
+      "cameraRules": [
+        "手机略高于胸口或平拍。",
+        "不要让膝盖离镜头太近。",
+        "保留窗边光和少量环境。"
+      ],
+      "angleAdvice": {
+        "angleType": "diagonal_high",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "side_front"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 30,
+        "tip": "室内背景杂乱时，轻中度虚化更干净。"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 8,
+        "faceSlim": 12,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "scoreHints": {
+        "composition": [
+          "脸部有窗光",
+          "膝盖不过大",
+          "环境干净"
+        ],
+        "pose": [
+          "坐姿微侧",
+          "手部自然",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "膝盖离镜头太近",
+          "背景墙面杂乱",
+          "脸部阴影重"
+        ]
+      },
+      "userTips": [
+        "身体微微侧坐，膝盖别正对镜头。",
+        "脸朝窗边光，皮肤更干净。",
+        "手可以抱膝或拿杯子，会更自然。"
+      ],
+      "standardModelPrompt": "标准青年女性模特，咖啡店窗边坐姿，身体侧坐，双手抱膝或拿杯子，脸朝窗边自然光，斜上方轻拍，背景干净。"
+    }
+  ],
+  "references": [
+    {
+      "id": "yf_ref_001",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_001.jpg",
+      "internalSourceFile": "Live实况🚢来上海一定要拍的18张人生照片_1_爆爆小猪_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_002",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_002.jpg",
+      "internalSourceFile": "万能街拍姿势❗️只需要记住4个口诀🌟_1_叶林林儿_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_003",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_003.jpg",
+      "internalSourceFile": "万能街拍姿势❗️只需要记住4个口诀🌟_2_叶林林儿_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_004",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_004.jpg",
+      "internalSourceFile": "万能街拍姿势❗️只需要记住4个口诀🌟_3_叶林林儿_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_005",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_005.jpg",
+      "internalSourceFile": "万能街拍姿势❗️只需要记住4个口诀🌟_4_叶林林儿_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_006",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_006.jpg",
+      "internalSourceFile": "存一些天津地标拍照姿势📸学起来_13_妮妮bling_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_007",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_007.jpg",
+      "internalSourceFile": "存一些天津地标拍照姿势📸学起来_2_妮妮bling_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_008",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_008.jpg",
+      "internalSourceFile": "存一些天津地标拍照姿势📸学起来_3_妮妮bling_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_009",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_009.jpg",
+      "internalSourceFile": "存一些天津地标拍照姿势📸学起来_4_妮妮bling_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_010",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_010.jpg",
+      "internalSourceFile": "存一些天津地标拍照姿势📸学起来_5_妮妮bling_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_011",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_011.jpg",
+      "internalSourceFile": "存一些天津地标拍照姿势📸学起来_6_妮妮bling_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_012",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_012.jpg",
+      "internalSourceFile": "存一些天津地标拍照姿势📸学起来_7_妮妮bling_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_013",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_013.jpg",
+      "internalSourceFile": "存一些天津地标拍照姿势📸学起来_8_妮妮bling_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_014",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_014.jpg",
+      "internalSourceFile": "存一些天津地标拍照姿势📸学起来_9_妮妮bling_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_015",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_015.jpg",
+      "internalSourceFile": "存！citywalk松弛感万能拍照姿势~📷！_1_小小摆烂家_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_016",
+      "scene": "城市街拍",
+      "templateName": "城市侧身街拍",
+      "templateId": "yf_pose_002",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_016.jpg",
+      "internalSourceFile": "存！citywalk松弛感万能拍照姿势~📷！_2_小小摆烂家_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_城市街拍",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "城市街拍"
+      },
+      "poseRules": [
+        "身体侧向30到45度。",
+        "脸转回看镜头，眼神自然。",
+        "一只手轻碰头发或拿包，另一只手自然下垂。"
+      ],
+      "cameraRules": [
+        "从侧前方拍，人物线条更明显。",
+        "手机放在胸口到腰部高度。",
+        "人物可放在右侧三分线，保留街景背景。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "left_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 15,
+        "waistSlim": 10,
+        "faceSlim": 8,
+        "skinWhiten": 12,
+        "skinSmooth": 12,
+        "makeupPreset": "通勤淡妆"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "街景背景杂乱时，用轻度虚化突出人物。"
+      },
+      "scoreHints": {
+        "composition": [
+          "人物在三分线",
+          "背景不压头",
+          "主体突出"
+        ],
+        "pose": [
+          "身体侧向",
+          "脸回看",
+          "手部有动作"
+        ],
+        "deduct": [
+          "正面站太直",
+          "手贴身体",
+          "背景太乱"
+        ]
+      },
+      "userTips": [
+        "身体侧向一点，脸转回看镜头。",
+        "手可以轻碰头发或拿包，别贴在身体两侧。",
+        "从侧前方拍，身体线条更好看。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净城市街道，侧前方平拍，身体侧向45度，脸看镜头，一手轻碰头发，一手拿包，背景轻度虚化。"
+    },
+    {
+      "id": "yf_ref_017",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_017.jpg",
+      "internalSourceFile": "9⃣️个海边拍照姿势不重样_1_夏至🌱_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_018",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_018.jpg",
+      "internalSourceFile": "9⃣️个海边拍照姿势不重样_4_夏至🌱_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_019",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_019.jpg",
+      "internalSourceFile": "9⃣️个海边拍照姿势不重样_5_夏至🌱_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_020",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_020.jpg",
+      "internalSourceFile": "9⃣️个海边拍照姿势不重样_6_夏至🌱_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_021",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_021.jpg",
+      "internalSourceFile": "9⃣️个海边拍照姿势不重样_7_夏至🌱_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_022",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_022.jpg",
+      "internalSourceFile": "Live实况🚢来上海一定要拍的18张人生照片_1_爆爆小猪_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_023",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_023.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_10_爱拍照的彤彤_来自小红书网页版 (1).jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_024",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_024.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_10_爱拍照的彤彤_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_025",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_025.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_1_爱拍照的彤彤_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_026",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_026.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_2_爱拍照的彤彤_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_027",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_027.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_3_爱拍照的彤彤_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_028",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_028.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_4_爱拍照的彤彤_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_029",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_029.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_5_爱拍照的彤彤_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_030",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_030.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_6_爱拍照的彤彤_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_031",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_031.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_7_爱拍照的彤彤_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_032",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_032.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_8_爱拍照的彤彤_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_033",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_033.jpg",
+      "internalSourceFile": "i人福音！📸这样拍照pose真的好出片！！_9_爱拍照的彤彤_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_034",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_034.jpg",
+      "internalSourceFile": "万能街拍姿势❗️只需要记住4个口诀🌟_1_叶林林儿_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_035",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_035.jpg",
+      "internalSourceFile": "9⃣️个海边拍照姿势不重样_1_夏至🌱_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_036",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_036.jpg",
+      "internalSourceFile": "9⃣️个海边拍照姿势不重样_4_夏至🌱_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_037",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_037.jpg",
+      "internalSourceFile": "9⃣️个海边拍照姿势不重样_5_夏至🌱_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_038",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_038.jpg",
+      "internalSourceFile": "9⃣️个海边拍照姿势不重样_6_夏至🌱_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_039",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_039.jpg",
+      "internalSourceFile": "9⃣️个海边拍照姿势不重样_7_夏至🌱_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_040",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_040.jpg",
+      "internalSourceFile": "【海边拍照技巧｜普通人也能拍出电影感📸_1_澄锦_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_041",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_041.jpg",
+      "internalSourceFile": "【海边拍照技巧｜普通人也能拍出电影感📸_1_澄锦_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_042",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_042.jpg",
+      "internalSourceFile": "【海边拍照技巧｜普通人也能拍出电影感📸_2_澄锦_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_043",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_043.jpg",
+      "internalSourceFile": "【海边拍照技巧｜普通人也能拍出电影感📸_2_澄锦_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_044",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_044.jpg",
+      "internalSourceFile": "【海边拍照技巧｜普通人也能拍出电影感📸_5_澄锦_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_045",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_045.jpg",
+      "internalSourceFile": "【海边拍照技巧｜普通人也能拍出电影感📸_5_澄锦_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_046",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_046.jpg",
+      "internalSourceFile": "【海边拍照技巧｜普通人也能拍出电影感📸_X_澄锦.jpg_01_子图01.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_047",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_047.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_10_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_048",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_048.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_11_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_049",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_049.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_1_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_050",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_050.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_2_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_051",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_051.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_3_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_052",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_052.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_4_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_053",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_053.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_5_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_054",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_054.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_6_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_055",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_055.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_7_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_056",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_056.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_8_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_057",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_057.jpg",
+      "internalSourceFile": "存一些拍照姿势🍃｜蓝白花海拍照姿势_9_一口太阳_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_058",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_058.jpg",
+      "internalSourceFile": "存一些普通的拍照姿势｜花海拍照_1_甜羊抱金_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_059",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_059.jpg",
+      "internalSourceFile": "存一些普通的拍照姿势｜花海拍照_2_甜羊抱金_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_060",
+      "scene": "花丛",
+      "templateName": "花丛草地氛围照",
+      "templateId": "yf_pose_005",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_060.jpg",
+      "internalSourceFile": "存一些普通的拍照姿势｜花海拍照_3_甜羊抱金_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_花丛",
+      "referenceQuality": 90,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "花丛"
+      },
+      "poseRules": [
+        "身体侧向，肩膀放松。",
+        "手轻轻靠近花、帽子或头发。",
+        "表情自然微笑，不要太用力摆拍。"
+      ],
+      "cameraRules": [
+        "平拍或略低机位，保留花草前景。",
+        "人物放在三分线位置。",
+        "前景花草可以遮一点，但不要挡住脸。"
+      ],
+      "angleAdvice": {
+        "angleType": "side_front",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "right_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 5,
+        "faceSlim": 8,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 35,
+        "tip": "花草背景容易乱，中度虚化更有氛围。"
+      },
+      "scoreHints": {
+        "composition": [
+          "花草不挡脸",
+          "人物和背景分离",
+          "前景自然"
+        ],
+        "pose": [
+          "手部轻",
+          "身体侧向",
+          "表情放松"
+        ],
+        "deduct": [
+          "花挡住五官",
+          "背景太乱",
+          "脸部背光"
+        ]
+      },
+      "userTips": [
+        "手轻轻靠近花或帽子，不要抓得太用力。",
+        "身体侧向一点，肩膀放松。",
+        "背景太杂时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，浅色花丛或草地公园，身体侧向，手轻扶帽子或花，平拍，前景花草自然虚化，画面清爽。"
+    },
+    {
+      "id": "yf_ref_061",
+      "scene": "草地公园",
+      "templateName": "显高全身照",
+      "templateId": "yf_pose_001",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_061.jpg",
+      "internalSourceFile": "存一些五一旅游公园拍照姿势！万能拍照技巧_1_软糖小星球_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_草地公园",
+      "referenceQuality": 82,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "草地公园"
+      },
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "id": "yf_ref_062",
+      "scene": "草地公园",
+      "templateName": "显高全身照",
+      "templateId": "yf_pose_001",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_062.jpg",
+      "internalSourceFile": "存一些五一旅游公园拍照姿势！万能拍照技巧_2_软糖小星球_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_草地公园",
+      "referenceQuality": 82,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "草地公园"
+      },
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "id": "yf_ref_063",
+      "scene": "草地公园",
+      "templateName": "显高全身照",
+      "templateId": "yf_pose_001",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_063.jpg",
+      "internalSourceFile": "存一些五一旅游公园拍照姿势！万能拍照技巧_3_软糖小星球_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_草地公园",
+      "referenceQuality": 82,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "草地公园"
+      },
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "id": "yf_ref_064",
+      "scene": "草地公园",
+      "templateName": "显高全身照",
+      "templateId": "yf_pose_001",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_064.jpg",
+      "internalSourceFile": "存一些五一旅游公园拍照姿势！万能拍照技巧_4_软糖小星球_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_草地公园",
+      "referenceQuality": 82,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "草地公园"
+      },
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "id": "yf_ref_065",
+      "scene": "草地公园",
+      "templateName": "显高全身照",
+      "templateId": "yf_pose_001",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_065.jpg",
+      "internalSourceFile": "拍照姿势｜夏日清新自然风格_1_悠悠美少女_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_草地公园",
+      "referenceQuality": 82,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "草地公园"
+      },
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "id": "yf_ref_066",
+      "scene": "草地公园",
+      "templateName": "显高全身照",
+      "templateId": "yf_pose_001",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_066.jpg",
+      "internalSourceFile": "拍照姿势｜夏日清新自然风格_2_悠悠美少女_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_草地公园",
+      "referenceQuality": 82,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "草地公园"
+      },
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "id": "yf_ref_067",
+      "scene": "草地公园",
+      "templateName": "显高全身照",
+      "templateId": "yf_pose_001",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_067.jpg",
+      "internalSourceFile": "拍照姿势｜夏日清新自然风格_3_悠悠美少女_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_草地公园",
+      "referenceQuality": 82,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "草地公园"
+      },
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "id": "yf_ref_068",
+      "scene": "草地公园",
+      "templateName": "显高全身照",
+      "templateId": "yf_pose_001",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_068.jpg",
+      "internalSourceFile": "拍照姿势｜夏日清新自然风格_4_悠悠美少女_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_草地公园",
+      "referenceQuality": 82,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "草地公园"
+      },
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "id": "yf_ref_069",
+      "scene": "草地公园",
+      "templateName": "显高全身照",
+      "templateId": "yf_pose_001",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_069.jpg",
+      "internalSourceFile": "拍照姿势｜夏日清新自然风格_5_悠悠美少女_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_草地公园",
+      "referenceQuality": 82,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "草地公园"
+      },
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "id": "yf_ref_070",
+      "scene": "草地公园",
+      "templateName": "显高全身照",
+      "templateId": "yf_pose_001",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_070.jpg",
+      "internalSourceFile": "拍照姿势｜夏日清新自然风格_6_悠悠美少女_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_草地公园",
+      "referenceQuality": 82,
+      "scoreBias": 4,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "草地公园"
+      },
+      "poseRules": [
+        "一条腿向前伸，脚尖轻轻点地。",
+        "身体侧向30度，脸转回看镜头。",
+        "肩膀放松，手可以拿包、插口袋或轻碰头发。"
+      ],
+      "cameraRules": [
+        "手机降低到腰部到膝盖之间。",
+        "竖拍，脚底靠近画面底部。",
+        "头顶少留白，人物不要离镜头太近。"
+      ],
+      "angleAdvice": {
+        "angleType": "low_angle",
+        "cameraHeight": "waist_level",
+        "cameraDistance": "full_body",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 25,
+        "waistSlim": 10,
+        "faceSlim": 5,
+        "skinWhiten": 10,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 15,
+        "tip": "全身照虚化不要太高，避免腿部边缘不自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脚底贴近底边",
+          "头顶留白少",
+          "人物完整"
+        ],
+        "pose": [
+          "一腿向前",
+          "身体侧向",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "俯拍会显矮",
+          "头顶留白太多",
+          "脚被裁掉"
+        ]
+      },
+      "userTips": [
+        "手机降低到腰部，脚底靠近画面底部。",
+        "一条腿向前伸，身体重心放后脚。",
+        "头顶留白少一点，会更显高。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，城市街拍背景，竖构图，低机位显高全身照，一条腿向前，身体侧向30度，手拿小包，脚底贴近画面底部，画面干净真实。"
+    },
+    {
+      "id": "yf_ref_071",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_071.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_1_女摄秀儿📷_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_072",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_072.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_1_女摄秀儿📷_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_073",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_073.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_2_女摄秀儿📷_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_074",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_074.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_2_女摄秀儿📷_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_075",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_075.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_3_女摄秀儿📷_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_076",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_076.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_3_女摄秀儿📷_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_077",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_077.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_4_女摄秀儿📷_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_078",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_078.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_4_女摄秀儿📷_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_079",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_079.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_5_女摄秀儿📷_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_080",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_080.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_5_女摄秀儿📷_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_081",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_081.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_6_女摄秀儿📷_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_082",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_082.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_6_女摄秀儿📷_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_083",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_083.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_7_女摄秀儿📷_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_084",
+      "scene": "夜景",
+      "templateName": "夜景人像",
+      "templateId": "yf_pose_007",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_084.jpg",
+      "internalSourceFile": "夜景人像不会只拍一次_7_女摄秀儿📷_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_夜景",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "夜景"
+      },
+      "poseRules": [
+        "身体微侧，脸朝向光源。",
+        "手可以拿包、扶栏杆或自然放胸前。",
+        "表情放松，眼神看镜头或灯光方向。"
+      ],
+      "cameraRules": [
+        "手机放在眼睛到胸口高度。",
+        "先找脸上有光的位置。",
+        "背景灯光可以虚化，但人物脸要清楚。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "half_body",
+        "cameraPosition": "front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 10,
+        "skinWhiten": 10,
+        "skinSmooth": 18,
+        "makeupPreset": "夜景提气色"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 25,
+        "tip": "夜景虚化开轻到中度，人物边缘更自然。"
+      },
+      "scoreHints": {
+        "composition": [
+          "灯光在背景",
+          "人物脸清楚",
+          "主体突出"
+        ],
+        "pose": [
+          "身体微侧",
+          "脸朝光源",
+          "手部自然"
+        ],
+        "deduct": [
+          "脸部太暗",
+          "画面模糊",
+          "虚化过高"
+        ]
+      },
+      "userTips": [
+        "脸转向有光的一边，肤色更干净。",
+        "夜景虚化别开太高，边缘更自然。",
+        "手机拿稳一点，等画面清楚再拍。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，夜景灯光背景，半身人像，脸朝向暖色光源，身体微侧，眼睛看镜头，背景灯光轻度虚化。"
+    },
+    {
+      "id": "yf_ref_085",
+      "scene": "咖啡店",
+      "templateName": "咖啡店窗边坐姿",
+      "templateId": "yf_pose_008",
+      "shotType": "three_quarter",
+      "image": "assets/pose_refs/pose_085.jpg",
+      "internalSourceFile": "青年女性_咖啡店_3.jpg",
+      "internalSourceFolder": "青年女性_咖啡店",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "three_quarter",
+        "scene": "咖啡店"
+      },
+      "poseRules": [
+        "坐姿身体微侧，膝盖不要正对镜头。",
+        "双手可以抱膝、拿杯子或轻放腿上。",
+        "脸朝窗边光，眼神看镜头或窗外。"
+      ],
+      "cameraRules": [
+        "手机略高于胸口或平拍。",
+        "不要让膝盖离镜头太近。",
+        "保留窗边光和少量环境。"
+      ],
+      "angleAdvice": {
+        "angleType": "diagonal_high",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "three_quarter",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 5,
+        "waistSlim": 8,
+        "faceSlim": 12,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "氛围甜美"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 30,
+        "tip": "室内背景杂乱时，轻中度虚化更干净。"
+      },
+      "scoreHints": {
+        "composition": [
+          "脸部有窗光",
+          "膝盖不过大",
+          "环境干净"
+        ],
+        "pose": [
+          "坐姿微侧",
+          "手部自然",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "膝盖离镜头太近",
+          "背景墙面杂乱",
+          "脸部阴影重"
+        ]
+      },
+      "userTips": [
+        "身体微微侧坐，膝盖别正对镜头。",
+        "脸朝窗边光，皮肤更干净。",
+        "手可以抱膝或拿杯子，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，咖啡店窗边坐姿，身体侧坐，双手抱膝或拿杯子，脸朝窗边自然光，斜上方轻拍，背景干净。"
+    },
+    {
+      "id": "yf_ref_086",
+      "scene": "镜子自拍",
+      "templateName": "镜子自拍",
+      "templateId": "yf_pose_004",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_086.jpg",
+      "internalSourceFile": "青年女性_镜子自拍_15.jpg",
+      "internalSourceFolder": "青年女性_镜子自拍",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "镜子自拍"
+      },
+      "poseRules": [
+        "手机放在脸侧或遮半脸。",
+        "另一只手可以托脸、撩发或拉衣领。",
+        "肩膀放松，脸微微侧一点。"
+      ],
+      "cameraRules": [
+        "手机略高于脸，更显脸小。",
+        "镜框尽量完整，脸不要贴边。",
+        "背景保持干净，避免杂物入镜。"
+      ],
+      "angleAdvice": {
+        "angleType": "high_selfie",
+        "cameraHeight": "eye_level",
+        "cameraDistance": "close_up",
+        "cameraPosition": "mirror_reflection"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 18,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 20,
+        "tip": "镜子自拍背景杂物多，轻度虚化会更干净。"
+      },
+      "scoreHints": {
+        "composition": [
+          "镜框完整",
+          "脸部不贴边",
+          "背景干净"
+        ],
+        "pose": [
+          "手机角度自然",
+          "手部动作轻",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "手机离脸太近",
+          "背景杂乱",
+          "脸被挡太多"
+        ]
+      },
+      "userTips": [
+        "手机略高于脸，眼睛看镜头上方一点。",
+        "另一只手可以托脸或轻碰头发。",
+        "背景有点乱时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净圆镜前自拍，手机略高于脸，遮半脸，一只手托脸，浅色室内背景，轻度虚化。"
+    },
+    {
+      "id": "yf_ref_087",
+      "scene": "镜子自拍",
+      "templateName": "镜子自拍",
+      "templateId": "yf_pose_004",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_087.jpg",
+      "internalSourceFile": "青年女性_镜子自拍_17.jpg",
+      "internalSourceFolder": "青年女性_镜子自拍",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "镜子自拍"
+      },
+      "poseRules": [
+        "手机放在脸侧或遮半脸。",
+        "另一只手可以托脸、撩发或拉衣领。",
+        "肩膀放松，脸微微侧一点。"
+      ],
+      "cameraRules": [
+        "手机略高于脸，更显脸小。",
+        "镜框尽量完整，脸不要贴边。",
+        "背景保持干净，避免杂物入镜。"
+      ],
+      "angleAdvice": {
+        "angleType": "high_selfie",
+        "cameraHeight": "eye_level",
+        "cameraDistance": "close_up",
+        "cameraPosition": "mirror_reflection"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 18,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 20,
+        "tip": "镜子自拍背景杂物多，轻度虚化会更干净。"
+      },
+      "scoreHints": {
+        "composition": [
+          "镜框完整",
+          "脸部不贴边",
+          "背景干净"
+        ],
+        "pose": [
+          "手机角度自然",
+          "手部动作轻",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "手机离脸太近",
+          "背景杂乱",
+          "脸被挡太多"
+        ]
+      },
+      "userTips": [
+        "手机略高于脸，眼睛看镜头上方一点。",
+        "另一只手可以托脸或轻碰头发。",
+        "背景有点乱时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净圆镜前自拍，手机略高于脸，遮半脸，一只手托脸，浅色室内背景，轻度虚化。"
+    },
+    {
+      "id": "yf_ref_088",
+      "scene": "镜子自拍",
+      "templateName": "镜子自拍",
+      "templateId": "yf_pose_004",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_088.jpg",
+      "internalSourceFile": "青年女性_镜子自拍_5.jpg",
+      "internalSourceFolder": "青年女性_镜子自拍",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "镜子自拍"
+      },
+      "poseRules": [
+        "手机放在脸侧或遮半脸。",
+        "另一只手可以托脸、撩发或拉衣领。",
+        "肩膀放松，脸微微侧一点。"
+      ],
+      "cameraRules": [
+        "手机略高于脸，更显脸小。",
+        "镜框尽量完整，脸不要贴边。",
+        "背景保持干净，避免杂物入镜。"
+      ],
+      "angleAdvice": {
+        "angleType": "high_selfie",
+        "cameraHeight": "eye_level",
+        "cameraDistance": "close_up",
+        "cameraPosition": "mirror_reflection"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 18,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 20,
+        "tip": "镜子自拍背景杂物多，轻度虚化会更干净。"
+      },
+      "scoreHints": {
+        "composition": [
+          "镜框完整",
+          "脸部不贴边",
+          "背景干净"
+        ],
+        "pose": [
+          "手机角度自然",
+          "手部动作轻",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "手机离脸太近",
+          "背景杂乱",
+          "脸被挡太多"
+        ]
+      },
+      "userTips": [
+        "手机略高于脸，眼睛看镜头上方一点。",
+        "另一只手可以托脸或轻碰头发。",
+        "背景有点乱时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净圆镜前自拍，手机略高于脸，遮半脸，一只手托脸，浅色室内背景，轻度虚化。"
+    },
+    {
+      "id": "yf_ref_089",
+      "scene": "镜子自拍",
+      "templateName": "镜子自拍",
+      "templateId": "yf_pose_004",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_089.jpg",
+      "internalSourceFile": "青年女性_镜子自拍_1.jpg",
+      "internalSourceFolder": "青年女性_镜子自拍",
+      "referenceQuality": 82,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "镜子自拍"
+      },
+      "poseRules": [
+        "手机放在脸侧或遮半脸。",
+        "另一只手可以托脸、撩发或拉衣领。",
+        "肩膀放松，脸微微侧一点。"
+      ],
+      "cameraRules": [
+        "手机略高于脸，更显脸小。",
+        "镜框尽量完整，脸不要贴边。",
+        "背景保持干净，避免杂物入镜。"
+      ],
+      "angleAdvice": {
+        "angleType": "high_selfie",
+        "cameraHeight": "eye_level",
+        "cameraDistance": "close_up",
+        "cameraPosition": "mirror_reflection"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 18,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 20,
+        "tip": "镜子自拍背景杂物多，轻度虚化会更干净。"
+      },
+      "scoreHints": {
+        "composition": [
+          "镜框完整",
+          "脸部不贴边",
+          "背景干净"
+        ],
+        "pose": [
+          "手机角度自然",
+          "手部动作轻",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "手机离脸太近",
+          "背景杂乱",
+          "脸被挡太多"
+        ]
+      },
+      "userTips": [
+        "手机略高于脸，眼睛看镜头上方一点。",
+        "另一只手可以托脸或轻碰头发。",
+        "背景有点乱时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净圆镜前自拍，手机略高于脸，遮半脸，一只手托脸，浅色室内背景，轻度虚化。"
+    },
+    {
+      "id": "yf_ref_090",
+      "scene": "镜子自拍",
+      "templateName": "镜子自拍",
+      "templateId": "yf_pose_004",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_090.jpg",
+      "internalSourceFile": "青年女性_镜子自拍_11.jpg",
+      "internalSourceFolder": "青年女性_镜子自拍",
+      "referenceQuality": 82,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "镜子自拍"
+      },
+      "poseRules": [
+        "手机放在脸侧或遮半脸。",
+        "另一只手可以托脸、撩发或拉衣领。",
+        "肩膀放松，脸微微侧一点。"
+      ],
+      "cameraRules": [
+        "手机略高于脸，更显脸小。",
+        "镜框尽量完整，脸不要贴边。",
+        "背景保持干净，避免杂物入镜。"
+      ],
+      "angleAdvice": {
+        "angleType": "high_selfie",
+        "cameraHeight": "eye_level",
+        "cameraDistance": "close_up",
+        "cameraPosition": "mirror_reflection"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 18,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 20,
+        "tip": "镜子自拍背景杂物多，轻度虚化会更干净。"
+      },
+      "scoreHints": {
+        "composition": [
+          "镜框完整",
+          "脸部不贴边",
+          "背景干净"
+        ],
+        "pose": [
+          "手机角度自然",
+          "手部动作轻",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "手机离脸太近",
+          "背景杂乱",
+          "脸被挡太多"
+        ]
+      },
+      "userTips": [
+        "手机略高于脸，眼睛看镜头上方一点。",
+        "另一只手可以托脸或轻碰头发。",
+        "背景有点乱时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净圆镜前自拍，手机略高于脸，遮半脸，一只手托脸，浅色室内背景，轻度虚化。"
+    },
+    {
+      "id": "yf_ref_091",
+      "scene": "镜子自拍",
+      "templateName": "镜子自拍",
+      "templateId": "yf_pose_004",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_091.jpg",
+      "internalSourceFile": "青年女性_镜子自拍_13.jpg",
+      "internalSourceFolder": "青年女性_镜子自拍",
+      "referenceQuality": 82,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "镜子自拍"
+      },
+      "poseRules": [
+        "手机放在脸侧或遮半脸。",
+        "另一只手可以托脸、撩发或拉衣领。",
+        "肩膀放松，脸微微侧一点。"
+      ],
+      "cameraRules": [
+        "手机略高于脸，更显脸小。",
+        "镜框尽量完整，脸不要贴边。",
+        "背景保持干净，避免杂物入镜。"
+      ],
+      "angleAdvice": {
+        "angleType": "high_selfie",
+        "cameraHeight": "eye_level",
+        "cameraDistance": "close_up",
+        "cameraPosition": "mirror_reflection"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 18,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 20,
+        "tip": "镜子自拍背景杂物多，轻度虚化会更干净。"
+      },
+      "scoreHints": {
+        "composition": [
+          "镜框完整",
+          "脸部不贴边",
+          "背景干净"
+        ],
+        "pose": [
+          "手机角度自然",
+          "手部动作轻",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "手机离脸太近",
+          "背景杂乱",
+          "脸被挡太多"
+        ]
+      },
+      "userTips": [
+        "手机略高于脸，眼睛看镜头上方一点。",
+        "另一只手可以托脸或轻碰头发。",
+        "背景有点乱时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净圆镜前自拍，手机略高于脸，遮半脸，一只手托脸，浅色室内背景，轻度虚化。"
+    },
+    {
+      "id": "yf_ref_092",
+      "scene": "镜子自拍",
+      "templateName": "镜子自拍",
+      "templateId": "yf_pose_004",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_092.jpg",
+      "internalSourceFile": "青年女性_镜子自拍_3.jpg",
+      "internalSourceFolder": "青年女性_镜子自拍",
+      "referenceQuality": 82,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "镜子自拍"
+      },
+      "poseRules": [
+        "手机放在脸侧或遮半脸。",
+        "另一只手可以托脸、撩发或拉衣领。",
+        "肩膀放松，脸微微侧一点。"
+      ],
+      "cameraRules": [
+        "手机略高于脸，更显脸小。",
+        "镜框尽量完整，脸不要贴边。",
+        "背景保持干净，避免杂物入镜。"
+      ],
+      "angleAdvice": {
+        "angleType": "high_selfie",
+        "cameraHeight": "eye_level",
+        "cameraDistance": "close_up",
+        "cameraPosition": "mirror_reflection"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 18,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 20,
+        "tip": "镜子自拍背景杂物多，轻度虚化会更干净。"
+      },
+      "scoreHints": {
+        "composition": [
+          "镜框完整",
+          "脸部不贴边",
+          "背景干净"
+        ],
+        "pose": [
+          "手机角度自然",
+          "手部动作轻",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "手机离脸太近",
+          "背景杂乱",
+          "脸被挡太多"
+        ]
+      },
+      "userTips": [
+        "手机略高于脸，眼睛看镜头上方一点。",
+        "另一只手可以托脸或轻碰头发。",
+        "背景有点乱时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净圆镜前自拍，手机略高于脸，遮半脸，一只手托脸，浅色室内背景，轻度虚化。"
+    },
+    {
+      "id": "yf_ref_093",
+      "scene": "镜子自拍",
+      "templateName": "镜子自拍",
+      "templateId": "yf_pose_004",
+      "shotType": "half_body",
+      "image": "assets/pose_refs/pose_093.jpg",
+      "internalSourceFile": "青年女性_镜子自拍_7.jpg",
+      "internalSourceFolder": "青年女性_镜子自拍",
+      "referenceQuality": 76,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "half_body",
+        "scene": "镜子自拍"
+      },
+      "poseRules": [
+        "手机放在脸侧或遮半脸。",
+        "另一只手可以托脸、撩发或拉衣领。",
+        "肩膀放松，脸微微侧一点。"
+      ],
+      "cameraRules": [
+        "手机略高于脸，更显脸小。",
+        "镜框尽量完整，脸不要贴边。",
+        "背景保持干净，避免杂物入镜。"
+      ],
+      "angleAdvice": {
+        "angleType": "high_selfie",
+        "cameraHeight": "eye_level",
+        "cameraDistance": "close_up",
+        "cameraPosition": "mirror_reflection"
+      },
+      "beautyAdvice": {
+        "legLengthen": 0,
+        "waistSlim": 5,
+        "faceSlim": 18,
+        "skinWhiten": 15,
+        "skinSmooth": 18,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": true,
+        "strength": 20,
+        "tip": "镜子自拍背景杂物多，轻度虚化会更干净。"
+      },
+      "scoreHints": {
+        "composition": [
+          "镜框完整",
+          "脸部不贴边",
+          "背景干净"
+        ],
+        "pose": [
+          "手机角度自然",
+          "手部动作轻",
+          "肩膀放松"
+        ],
+        "deduct": [
+          "手机离脸太近",
+          "背景杂乱",
+          "脸被挡太多"
+        ]
+      },
+      "userTips": [
+        "手机略高于脸，眼睛看镜头上方一点。",
+        "另一只手可以托脸或轻碰头发。",
+        "背景有点乱时，打开轻度虚化。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净圆镜前自拍，手机略高于脸，遮半脸，一只手托脸，浅色室内背景，轻度虚化。"
+    },
+    {
+      "id": "yf_ref_094",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_094.jpg",
+      "internalSourceFile": "【海边拍照技巧｜普通人也能拍出电影感📸_X_澄锦.jpg_02_子图01.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_095",
+      "scene": "海边",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_095.jpg",
+      "internalSourceFile": "【海边拍照技巧｜普通人也能拍出电影感📸_X_澄锦.jpg_05_子图01.jpg",
+      "internalSourceFolder": "青年女性_海边",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "海边"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_096",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_096.jpg",
+      "internalSourceFile": "万能街拍姿势❗️只需要记住4个口诀🌟_2_叶林林儿_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_097",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_097.jpg",
+      "internalSourceFile": "万能街拍姿势❗️只需要记住4个口诀🌟_3_叶林林儿_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_098",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_098.jpg",
+      "internalSourceFile": "万能街拍姿势❗️只需要记住4个口诀🌟_4_叶林林儿_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_099",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_099.jpg",
+      "internalSourceFile": "不服不行！这组全身拍照姿势真的太绝了✅_1_米米爱拍照_来自小红书网页版.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    },
+    {
+      "id": "yf_ref_100",
+      "scene": "旅行打卡",
+      "templateName": "海边旅行照",
+      "templateId": "yf_pose_006",
+      "shotType": "full_body",
+      "image": "assets/pose_refs/pose_100.jpg",
+      "internalSourceFile": "不服不行！这组全身拍照姿势真的太绝了✅_1_米米爱拍照_来自小红书网页版_1.jpg",
+      "internalSourceFolder": "青年女性_旅行打卡",
+      "referenceQuality": 90,
+      "scoreBias": 0,
+      "recommendedWhen": {
+        "mode": "人物",
+        "distance": "full_body",
+        "scene": "旅行打卡"
+      },
+      "poseRules": [
+        "身体侧向海面，脸回头看镜头。",
+        "手可以扶帽子、撩头发或自然张开。",
+        "站姿放松，别正面站太直。"
+      ],
+      "cameraRules": [
+        "平拍或低机位都可以。",
+        "地平线放在上方或下方三分线。",
+        "保留天空和海面，人物放三分线。"
+      ],
+      "angleAdvice": {
+        "angleType": "eye_level",
+        "cameraHeight": "chest_level",
+        "cameraDistance": "environmental",
+        "cameraPosition": "side_front"
+      },
+      "beautyAdvice": {
+        "legLengthen": 12,
+        "waistSlim": 5,
+        "faceSlim": 5,
+        "skinWhiten": 12,
+        "skinSmooth": 10,
+        "makeupPreset": "素颜自然"
+      },
+      "backgroundBlurAdvice": {
+        "enabledByDefault": false,
+        "strength": 5,
+        "tip": "海边背景干净时不一定要虚化，保留海天更有旅行感。"
+      },
+      "scoreHints": {
+        "composition": [
+          "地平线不压脖子",
+          "人物在三分线",
+          "保留海天"
+        ],
+        "pose": [
+          "身体侧向",
+          "手部自然",
+          "回头自然"
+        ],
+        "deduct": [
+          "强逆光脸黑",
+          "地平线穿过头",
+          "人物太小"
+        ]
+      },
+      "userTips": [
+        "地平线别压在脖子上，放到三分线附近。",
+        "身体侧向海面，脸回头看镜头。",
+        "风大时手扶帽子或头发，会更自然。"
+      ],
+      "standardModelRewrite": "标准青年女性模特，干净海边，身体侧向海面，回头看镜头，一手扶帽子，平拍，保留天空和海平线。"
+    }
+  ]
+}

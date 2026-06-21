@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>姿势提醒相机 C版 · 真机体验</title>
+  <link rel="stylesheet" href="./ui-c-version.css" />
+  <!-- TensorFlow.js + MoveNet + FaceMesh -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.17.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection@2.1.3/dist/pose-detection.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@1.0.5/dist/face-landmarks-detection.js"></script>
+</head>
+<body>
+  <main class="phone-shell reference-mode">
+    <!-- 取景框：实况摄像头 + 叠加层 -->
+    <section class="viewfinder legacy-layout" id="viewfinder">
+      <!-- 真实摄像头画面（镜像） -->
+      <video id="cameraVideo" class="hero-photo" autoplay playsinline muted></video>
+      <!-- 姿势检测骨架画布 -->
+      <canvas id="poseCanvas" class="hero-photo" style="position:absolute;inset:0;z-index:1;pointer-events:none;"></canvas>
+      <!-- 参考姿势模特叠加层 -->
+      <img id="posePersonLayer" class="pose-template pose-person-layer" src="./assets/ui-c-pose-person-user-viewport.png" alt="推荐姿势模特" />
+      <img id="poseOutlineLayer" class="pose-template pose-outline-layer" src="./assets/ui-c-pose-outline-user-viewport.png" alt="推荐姿势边框" />
+      <!-- 网格线遮罩 -->
+      <div class="view-mask"></div>
+
+      <!-- 摄像头状态提示 -->
+      <div id="cameraState" style="position:absolute;top:10px;left:50%;transform:translateX(-50%);color:#fff;font-size:13px;z-index:5;background:rgba(0,0,0,.5);padding:6px 14px;border-radius:20px;pointer-events:none;">点击"开始"启动摄像头</div>
+
+      <!-- 评分环 -->
+      <div class="score-ring" id="scoreRing">
+        <span id="scoreValue">--</span><small>分</small>
+        <button class="overlay-close score-close" type="button" data-close-overlay="score" aria-label="关闭评分">×</button>
+      </div>
+
+      <!-- 文字提醒浮窗（4行分类） -->
+      <button class="guide-bubble" id="guideBubble" type="button">
+        <span class="guide-line"><span class="guide-icon">🧍</span><span id="poseGuide">请开启摄像头</span></span>
+        <span class="guide-line"><span class="guide-icon">😊</span><span id="faceGuide">面部自然，保持放松</span></span>
+        <span class="guide-line"><span class="guide-icon">👁</span><span id="eyeGuide">眼神自然，略带笑意</span></span>
+        <span class="guide-line"><span class="guide-icon">☀</span><span id="lightGuide">光线适中</span></span>
+        <span class="overlay-close guide-close" data-close-overlay="guide" aria-label="关闭提示">×</span>
+      </button>
+      <button class="restore-assist overlay-hidden" id="restoreAssist" type="button">辅助</button>
+    </section>
+
+    <!-- 底部控制面板（保留C版完整UI） -->
+    <section class="control-panel">
+      <!-- 摄像头控制按钮 -->
+      <div style="display:flex;gap:5px;padding:2px 8px 0;justify-content:center;">
+        <button id="btnStartCamera" class="pill" type="button" style="background:#e94560;color:#fff;font-size:11px;padding:4px 12px;min-height:26px;">开始</button>
+        <button id="btnStopCamera" class="pill" type="button" style="display:none;font-size:11px;padding:4px 12px;min-height:26px;">暂停</button>
+        <button id="btnSwitchCamera" class="pill" type="button" style="font-size:11px;padding:4px 12px;min-height:26px;">切换</button>
+        <button id="flipBtn" class="pill" type="button" style="font-size:11px;padding:4px 12px;min-height:26px;">翻转</button>
+      </div>
+
+      <nav class="style-tabs" id="styleTabs" aria-label="风格选择">
+        <button type="button">酷帅</button>
+        <button type="button">活泼</button>
+        <button type="button">通勤</button>
+        <button class="active" type="button">推荐</button>
+        <button type="button">甜美</button>
+        <button type="button">轻熟</button>
+        <button type="button">优雅</button>
+      </nav>
+
+      <div class="pose-grid" id="poseGrid">
+        <button class="pose-card" type="button" data-template="./assets/ui-c-pose-template-user-viewport.png" data-title="显高全身照" data-tip="手机降低到腰部，脚底靠近画面底部。">
+          <img src="./assets/ui-c-pose-1.png" alt="显高全身照" />
+          <span>显高全身照</span>
+        </button>
+        <button class="pose-card" type="button" data-template="./assets/ui-c-pose-template-user-viewport.png" data-title="城市侧身街拍" data-tip="身体侧向一点，脸转回看镜头。">
+          <img src="./assets/ui-c-pose-2.png" alt="城市侧身街拍" />
+          <span>城市侧身街拍</span>
+        </button>
+        <button class="pose-card active" type="button" data-template="./assets/ui-c-pose-template-user-viewport.png" data-title="花丛氛围照" data-tip="蹲姿或坐姿，手轻扶花朵，表情温柔。">
+          <img src="./assets/ui-c-pose-3.png" alt="花丛氛围照" />
+          <span>花丛氛围照</span>
+        </button>
+        <button class="pose-card" type="button" data-template="./assets/ui-c-pose-template-user-viewport.png" data-title="走路抓拍" data-tip="预留前进方向空间，脚刚落地时按快门。">
+          <img src="./assets/ui-c-pose-4.png" alt="走路抓拍" />
+          <span>走路抓拍</span>
+        </button>
+      </div>
+
+      <div class="action-row">
+        <button class="pill scene-picker-btn" type="button" id="sceneBtn">
+          <span class="scene-label">自定义</span>
+          <span class="scene-value" id="sceneValue">女性 · 单人</span>
+        </button>
+        <button class="pill auto-btn" type="button" id="autoBtn">自动</button>
+        <button class="capture-btn" type="button" id="captureBtnLive" aria-label="拍照"></button>
+        <button class="pill opacity-trigger" type="button" id="opacityBtn">透明度</button>
+        <button class="pill reshuffle-btn" type="button" id="reshuffleBtn">换一批</button>
+      </div>
+
+      <!-- 透明度面板 -->
+      <section class="opacity-picker overlay-hidden" id="opacityPicker" aria-label="透明度调节">
+        <label><span>模特透明</span><input id="modelOpacityRange" type="range" min="0" max="100" value="20" /><output id="modelOpacityValue">20%</output></label>
+        <label><span>边框透明</span><input id="outlineOpacityRange" type="range" min="0" max="100" value="70" /><output id="outlineOpacityValue">70%</output></label>
+      </section>
+
+      <!-- 姿势库选择器 -->
+      <section class="audience-picker overlay-hidden" id="audiencePicker" aria-label="姿势库选择">
+        <div class="picker-column">
+          <strong>人群</strong>
+          <button type="button" data-picker="group" data-value="孩童">孩童</button>
+          <button class="active" type="button" data-picker="group" data-value="女性">女性</button>
+          <button type="button" data-picker="group" data-value="男性">男性</button>
+          <button type="button" data-picker="group" data-value="多人">多人</button>
+        </div>
+        <div class="picker-column">
+          <strong>类型</strong>
+          <button class="active" type="button" data-picker="type" data-value="单人">单人</button>
+          <button type="button" data-picker="type" data-value="情侣">情侣</button>
+          <button type="button" data-picker="type" data-value="闺蜜">闺蜜</button>
+          <button type="button" data-picker="type" data-value="亲子">亲子</button>
+          <button type="button" data-picker="type" data-value="朋友">朋友</button>
+        </div>
+        <div class="picker-column">
+          <strong>姿态</strong>
+          <button class="active" type="button" data-picker="pose" data-value="全部">全部</button>
+          <button type="button" data-picker="pose" data-value="站姿">站姿</button>
+          <button type="button" data-picker="pose" data-value="坐姿">坐姿</button>
+          <button type="button" data-picker="pose" data-value="蹲姿">蹲姿</button>
+        </div>
+      </section>
+
+      <div class="bottom-tools">
+        <button type="button" data-panel="color">色彩调整</button>
+        <button type="button" data-panel="beauty">美颜美体</button>
+        <button type="button" data-panel="creative">创意设计</button>
+      </div>
+    </section>
+
+    <!-- 抽屉编辑面板 -->
+    <section class="drawer" id="drawer" aria-live="polite">
+      <div class="drawer-head">
+        <strong id="drawerTitle">美颜美体</strong>
+        <button type="button" id="closeDrawer">关闭</button>
+      </div>
+      <div class="drawer-content" id="drawerContent"></div>
+    </section>
+
+    <div class="toast" id="toast">已更新推荐</div>
+  </main>
+
+  <script src="./ui-c-live.js"></script>
+</body>
+</html>

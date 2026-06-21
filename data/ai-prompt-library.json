@@ -1,0 +1,382 @@
+{
+  "version": "1.0",
+  "description": "AI拍摄指导相机 - 模特图生成提示词库",
+  "usage": "使用 Midjourney / DALL-E 3 / Stable Diffusion 按提示词生成标准模特图，每个姿势需生成两张：模特图(modelImage) + 纯轮廓线稿图(outlineImage)",
+  "generationNote": "所有提示词已去除真实人物特征，仅保留姿势结构、构图和风格方向。生成后需人工审核，确保符合版权要求。",
+
+  "categories": {
+    "audience": {
+      "孩童": { "ageRange": "3-16岁", "subGroups": ["幼儿(3-6岁)", "少年(7-16岁)"] },
+      "女性": { "ageRange": "18-45岁", "subGroups": ["青年女性(18-30岁)", "成年女性(30-45岁)", "中年女性(45-55岁)"] },
+      "男性": { "ageRange": "18-45岁", "subGroups": ["青年男性(18-30岁)", "成年男性(30-45岁)", "中年男性(45-55岁)"] },
+      "多人": { "ageRange": "不限", "subGroups": ["情侣", "闺蜜", "亲子", "朋友", "家庭"] }
+    },
+    "type": ["单人", "情侣", "闺蜜", "亲子", "朋友"],
+    "style": {
+      "痞帅": { "mood": "冷峻、自信、街头感", "colorTone": "冷色调、高对比", "outfit": "街头风、皮衣、深色系" },
+      "活泼": { "mood": "开心、动感、青春", "colorTone": "明亮、饱和", "outfit": "运动休闲、亮色系" },
+      "通勤": { "mood": "干练、专业、都市感", "colorTone": "中性、干净", "outfit": "职业装、简约风格" },
+      "甜美": { "mood": "温柔、可爱、少女感", "colorTone": "暖色调、柔光", "outfit": "裙装、浅色系、柔和材质" },
+      "轻熟": { "mood": "优雅、成熟、知性", "colorTone": "柔和暖调", "outfit": "半正式、质感面料" },
+      "优雅": { "mood": "高贵、从容、经典", "colorTone": "低饱和、高级灰", "outfit": "礼服/正装、经典剪裁" }
+    }
+  },
+
+  "prompts": {
+    "_base_instruction": "以下所有提示词生成时，请使用干净统一的画面风格，白色或浅灰背景（便于后续提取轮廓），标准青年/成年模特形象，不看镜头或自然看镜头，全身或半身构图，竖拍比例3:4。",
+
+    "女性": {
+      "单人": {
+        "甜美": [
+          {
+            "id": "female_single_sweet_001",
+            "name": "花丛甜美蹲姿",
+            "scene": "草地公园",
+            "shotType": "three_quarter",
+            "referenceImages": ["青年女性_花丛_1.jpg", "青年女性_花丛_5.jpg", "青年女性_草地公园_3.jpg"],
+            "poseRules": ["蹲姿或坐姿，手轻扶花朵", "身体微微前倾，表情温柔", "眼神看向花朵或镜头"],
+            "modelPrompt": "A young female standard model, sweet style, squatting in a flower garden, one hand gently touching a flower, soft warm smile, natural lighting, clean background, 3:4 portrait composition, waist-level camera angle. The model should be anonymous with generic features, wearing a light pastel dress. Photorealistic but clean studio lighting style.",
+            "outlinePrompt": "Pure white background, black clean outline silhouette of the same pose - a young woman squatting with hand reaching toward flowers. Simple line art style, only body contour visible, no facial details, no background elements. Perfect for overlay use."
+          },
+          {
+            "id": "female_single_sweet_002",
+            "name": "草地回眸一笑",
+            "scene": "草地公园",
+            "shotType": "full_body",
+            "referenceImages": ["青年女性_草地公园_1.jpg", "青年女性_草地公园_5.jpg"],
+            "poseRules": ["站立回眸", "身体侧向45度，脸转回看镜头", "一只手自然撩发"],
+            "modelPrompt": "A young female standard model, sweet style, standing in a grassy park, looking back over shoulder at camera, one hand touching hair, gentle smile, soft afternoon sunlight, clean natural background, 3:4 portrait full body composition, eye-level camera. Generic model features, light floral dress.",
+            "outlinePrompt": "Pure white background, black clean outline silhouette - young woman standing, looking back over one shoulder, one hand raised to hair. Simple line art, body contour only, no face or background details."
+          },
+          {
+            "id": "female_single_sweet_003",
+            "name": "咖啡店窗边微笑",
+            "scene": "咖啡店",
+            "shotType": "half_body",
+            "referenceImages": ["青年女性_咖啡店_1.jpg", "青年女性_咖啡店_7.jpg"],
+            "poseRules": ["坐姿，身体微微侧向窗外", "手拿咖啡杯或自然放桌面", "温柔眼神看窗外或镜头"],
+            "modelPrompt": "A young female standard model, sweet style, sitting by a cafe window, holding a coffee cup, soft smile, natural window light from side, clean background, 3:4 portrait half body composition, eye-level angle. Generic features, casual light knitwear.",
+            "outlinePrompt": "Pure white background, black line outline - young woman seated at a table, holding a cup, half body contour only. Simple clean line art for overlay."
+          },
+          {
+            "id": "female_single_sweet_004",
+            "name": "海边甜美站姿",
+            "scene": "海边",
+            "shotType": "full_body",
+            "referenceImages": ["青年女性_海边_1.jpg", "青年女性_海边_7.jpg"],
+            "poseRules": ["站立海边，一手扶帽檐", "身体微微侧向海面", "裙摆自然飘动"],
+            "modelPrompt": "A young female standard model, sweet style, standing at seaside, one hand holding hat against wind, light dress flowing, soft smile, clean beach background with gentle waves, 3:4 portrait full body, waist-level angle. Generic model features.",
+            "outlinePrompt": "Pure white background, black outline - young woman standing, one hand on hat, dress flowing slightly. Body contour line art only."
+          }
+        ],
+        "活泼": [
+          {
+            "id": "female_single_lively_001",
+            "name": "街头跳跃抓拍",
+            "scene": "城市街拍",
+            "shotType": "full_body",
+            "referenceImages": ["青年女性_城市街拍_1.jpg", "青年女性_旅行打卡_3.jpg"],
+            "poseRules": ["单脚轻跳或迈步", "手臂自然张开或摆动", "开心大笑或自然表情"],
+            "modelPrompt": "A young female standard model, lively energetic style, mid-stride walking in urban street, arms swinging naturally, big genuine smile, bright daylight, clean city background, 3:4 portrait full body, waist-level camera. Generic features, casual sporty outfit, sneakers.",
+            "outlinePrompt": "Pure white background, black outline - young woman mid-walk with arms swinging, dynamic pose. Simple body contour line art."
+          },
+          {
+            "id": "female_single_lively_002",
+            "name": "旅行打卡挥手",
+            "scene": "旅行打卡",
+            "shotType": "full_body",
+            "referenceImages": ["青年女性_旅行打卡_1.jpg", "青年女性_旅行打卡_5.jpg"],
+            "poseRules": ["面对地标站立", "一手高举挥手", "身体自然放松"],
+            "modelPrompt": "A young female standard model, lively travel style, standing in front of a scenic landmark, one hand waving high, happy expression, bright sunny day, clean composition, 3:4 portrait full body, slightly low angle to show height. Generic features, comfortable travel outfit.",
+            "outlinePrompt": "Pure white background, black outline - young woman standing with one arm raised waving. Body contour line art only."
+          }
+        ],
+        "通勤": [
+          {
+            "id": "female_single_commute_001",
+            "name": "职场干练站姿",
+            "scene": "城市街拍",
+            "shotType": "full_body",
+            "referenceImages": ["成年女性_职业形象_1.jpg"],
+            "poseRules": ["直立站姿，肩膀展开", "一手拿公文包或自然垂下", "自信平视镜头"],
+            "modelPrompt": "A young female standard model, professional commute style, standing confidently in modern city setting, one hand holding a tote bag, poised expression, clean office district background, 3:4 portrait full body, eye-level angle. Generic features, smart casual blazer and trousers.",
+            "outlinePrompt": "Pure white background, black outline - young woman standing upright, holding a bag. Clean body contour line art."
+          },
+          {
+            "id": "female_single_commute_002",
+            "name": "咖啡外带行走",
+            "scene": "咖啡店",
+            "shotType": "three_quarter",
+            "referenceImages": ["成年女性_咖啡店_1.jpg"],
+            "poseRules": ["行走中手持咖啡", "看向前方或手机", "步伐自然"],
+            "modelPrompt": "A young female standard model, commute style, walking with takeaway coffee in hand, looking ahead naturally, urban sidewalk background slightly blurred, 3:4 portrait three-quarter shot, eye-level angle. Generic features, neat workwear.",
+            "outlinePrompt": "Pure white background, black outline - young woman walking, holding a cup. Three-quarter body contour line art."
+          }
+        ],
+        "轻熟": [
+          {
+            "id": "female_single_mature_001",
+            "name": "夜景优雅站姿",
+            "scene": "夜景晚宴",
+            "shotType": "half_body",
+            "referenceImages": ["成年女性_夜景晚宴_1.jpg", "青年女性_夜景_3.jpg"],
+            "poseRules": ["身体微侧，脸朝向光源", "一手自然垂放或拿手包", "优雅微笑"],
+            "modelPrompt": "A young female standard model, refined mature style, standing in evening setting with city lights blurred behind, face turned toward soft light source, elegant slight smile, half body composition, 3:4 portrait, eye-level camera. Generic features, elegant evening dress.",
+            "outlinePrompt": "Pure white background, black outline - young woman standing elegantly, half body, face slightly turned. Clean line art for overlay."
+          },
+          {
+            "id": "female_single_mature_002",
+            "name": "室内氛围坐姿",
+            "scene": "室内氛围",
+            "shotType": "three_quarter",
+            "referenceImages": ["成年女性_室内氛围_1.jpg"],
+            "poseRules": ["优雅坐姿，双腿并拢微侧", "手扶椅背或自然搭膝", "知性看向远方"],
+            "modelPrompt": "A young female standard model, mature elegant style, seated gracefully in a tasteful indoor setting, hands resting naturally, contemplative gaze to side, soft ambient lighting, 3:4 portrait three-quarter shot, slightly elevated angle. Generic features, quality knit dress.",
+            "outlinePrompt": "Pure white background, black outline - young woman seated gracefully, three-quarter body. Simple contour line art."
+          }
+        ],
+        "优雅": [
+          {
+            "id": "female_single_elegant_001",
+            "name": "花园长裙站姿",
+            "scene": "花园",
+            "shotType": "full_body",
+            "referenceImages": ["成年女性_花园_1.jpg", "中年女性_公园花园_1.jpg"],
+            "poseRules": ["长裙站立，一手轻提裙摆", "身体微侧，气质端庄", "平静看镜头或远方"],
+            "modelPrompt": "A young female standard model, elegant classic style, standing in a manicured garden, one hand gently lifting dress hem, poised and graceful, soft natural light, clean composition, 3:4 portrait full body, slightly low angle. Generic features, flowing maxi dress.",
+            "outlinePrompt": "Pure white background, black outline - young woman in long dress, one hand holding hem. Full body elegant contour line art."
+          },
+          {
+            "id": "female_single_elegant_002",
+            "name": "旅行景点端庄照",
+            "scene": "旅行景点",
+            "shotType": "full_body",
+            "referenceImages": ["中年女性_旅行景点_1.jpg", "成年女性_旅行_1.jpg"],
+            "poseRules": ["面对风景，站姿挺拔", "双手自然交叉身前", "端庄微笑"],
+            "modelPrompt": "A young female standard model, elegant style, standing at a scenic travel location, hands clasped naturally in front, dignified smile, beautiful landscape background slightly out of focus, 3:4 portrait full body, eye-level. Generic features, classic midi dress.",
+            "outlinePrompt": "Pure white background, black outline - young woman standing with hands clasped. Full body elegant contour."
+          }
+        ],
+        "痞帅": [
+          {
+            "id": "female_single_cool_001",
+            "name": "街头酷感站姿",
+            "scene": "城市街拍",
+            "shotType": "full_body",
+            "referenceImages": ["青年女性_城市街拍_5.jpg"],
+            "poseRules": ["单手插口袋，身体微斜", "表情冷峻不看镜头", "站姿放松有态度"],
+            "modelPrompt": "A young female standard model, cool edgy style, standing on urban street, one hand in pocket, looking away from camera with confident expression, moody urban lighting, 3:4 portrait full body, slightly low angle. Generic features, leather jacket and dark jeans.",
+            "outlinePrompt": "Pure white background, black outline - young woman standing with hand in pocket, confident stance. Full body cool contour line art."
+          }
+        ]
+      },
+      "情侣": {
+        "甜美": [
+          {
+            "id": "female_couple_sweet_001",
+            "name": "情侣海边牵手",
+            "scene": "海边",
+            "shotType": "full_body",
+            "referenceImages": ["多人_情侣_1.jpg", "多人_情侣_3.jpg"],
+            "poseRules": ["男女牵手面对海面", "身体靠近但不贴紧", "自然互动看对方或海面"],
+            "modelPrompt": "A young standard model couple, sweet romantic style, walking hand in hand along beach, looking at each other warmly, golden hour lighting, clean beach background with gentle waves, 3:4 portrait full body, eye-level angle. Both models have generic anonymous features, wearing casual light-colored summer clothes.",
+            "outlinePrompt": "Pure white background, black outline - a couple holding hands walking side by side, both full body. Simple clean line art for overlay, two people silhouette."
+          }
+        ],
+        "活泼": [
+          {
+            "id": "female_couple_lively_001",
+            "name": "情侣街头互动",
+            "scene": "城市街拍",
+            "shotType": "full_body",
+            "referenceImages": ["多人_情侣_5.jpg"],
+            "poseRules": ["一人从背后轻搂另一个", "两人都开心笑", "动作自然不僵硬"],
+            "modelPrompt": "A young standard model couple, lively playful style, one playfully hugging the other from behind on a city street, both laughing naturally, bright daylight, clean urban background, 3:4 portrait full body. Both have generic anonymous features, casual streetwear.",
+            "outlinePrompt": "Pure white background, black outline - couple in playful hug pose, two people full body silhouette. Clean line art."
+          }
+        ]
+      }
+    },
+
+    "男性": {
+      "单人": {
+        "痞帅": [
+          {
+            "id": "male_single_cool_001",
+            "name": "城市酷感街拍",
+            "scene": "城市街拍",
+            "shotType": "full_body",
+            "referenceImages": ["青年男性_城市_1.jpg", "青年男性_城市_5.jpg"],
+            "poseRules": ["单手插口袋，肩膀放松", "表情冷峻，不看镜头", "身体微侧，站姿随意"],
+            "modelPrompt": "A young male standard model, cool urban style, standing on city street, one hand in pocket, looking away confidently, moody urban atmosphere, 3:4 portrait full body, slightly low angle. Generic anonymous features, dark jacket and fitted jeans.",
+            "outlinePrompt": "Pure white background, black outline - young man standing confidently with hand in pocket. Full body contour line art."
+          },
+          {
+            "id": "male_single_cool_002",
+            "name": "街头行走抓拍",
+            "scene": "街景",
+            "shotType": "full_body",
+            "referenceImages": ["青年男性_街景_1.jpg", "青年男性_旅行_1.jpg"],
+            "poseRules": ["走路中迈步", "单手插兜或拿手机", "自然看向前方"],
+            "modelPrompt": "A young male standard model, cool casual style, walking confidently on city sidewalk, one hand in pocket, looking ahead naturally, bright daylight, 3:4 portrait full body, waist-level angle. Generic features, casual streetwear.",
+            "outlinePrompt": "Pure white background, black outline - young man mid-walk, confident stride. Full body contour line art."
+          }
+        ],
+        "通勤": [
+          {
+            "id": "male_single_commute_001",
+            "name": "职场正装站姿",
+            "scene": "城市",
+            "shotType": "full_body",
+            "referenceImages": ["成年男性_职业_1.jpg"],
+            "poseRules": ["正装站立，肩膀挺直", "一手自然垂放或拿公文包", "自信平视镜头"],
+            "modelPrompt": "A young male standard model, professional business style, standing in modern office district, wearing a well-fitted suit, confident poised expression, clean background, 3:4 portrait full body, eye-level. Generic anonymous features.",
+            "outlinePrompt": "Pure white background, black outline - man in suit standing confidently. Full body line art contour."
+          }
+        ],
+        "活泼": [
+          {
+            "id": "male_single_lively_001",
+            "name": "运动户外站姿",
+            "scene": "户外/运动",
+            "shotType": "full_body",
+            "referenceImages": ["青年男性_运动_1.jpg", "青年男性_户外_1.jpg"],
+            "poseRules": ["运动装备，站姿放松", "一手拿运动器材", "阳光笑容"],
+            "modelPrompt": "A young male standard model, sporty energetic style, standing outdoors with sports gear, bright smile, sunny day, clean natural background, 3:4 portrait full body. Generic features, athletic wear.",
+            "outlinePrompt": "Pure white background, black outline - athletic young man standing, full body silhouette. Clean line art."
+          }
+        ]
+      }
+    },
+
+    "孩童": {
+      "单人": {
+        "活泼": [
+          {
+            "id": "child_single_lively_001",
+            "name": "公园玩耍站姿",
+            "scene": "户外公园",
+            "shotType": "full_body",
+            "referenceImages": ["幼儿_公园_1.jpg", "幼儿_公园_5.jpg"],
+            "poseRules": ["自然站立或奔跑", "手臂张开或拿玩具", "天真笑容"],
+            "modelPrompt": "A young child standard model, around 5 years old, lively playful style, playing in a sunny park, arms open wide with joy, genuine happy expression, clean green background with soft blur, 3:4 portrait full body, slightly low angle. Generic anonymous child features, colorful casual clothes. Gender neutral appearance preferred.",
+            "outlinePrompt": "Pure white background, black outline - young child standing with open arms, full body silhouette. Simple clean line art for overlay."
+          },
+          {
+            "id": "child_single_lively_002",
+            "name": "校园活泼站姿",
+            "scene": "校园",
+            "shotType": "full_body",
+            "referenceImages": ["少年_校园_1.jpg", "少年_校园_5.jpg"],
+            "poseRules": ["背书包或拿书本", "站姿自然有活力", "面对镜头微笑"],
+            "modelPrompt": "A young teen standard model, around 12 years old, lively student style, standing in a school campus setting with backpack, bright smile looking at camera, clean background, 3:4 portrait full body, eye-level. Generic anonymous teen features, school casual wear.",
+            "outlinePrompt": "Pure white background, black outline - young teen with backpack standing. Full body contour line art."
+          }
+        ]
+      },
+      "亲子": {
+        "甜美": [
+          {
+            "id": "child_parent_sweet_001",
+            "name": "母女公园温馨",
+            "scene": "公园",
+            "shotType": "full_body",
+            "referenceImages": ["多人_亲子_1.jpg", "多人_亲子_3.jpg"],
+            "poseRules": ["母亲牵孩子手", "两人面对面或同看镜头", "温馨互动"],
+            "modelPrompt": "A young mother and child standard model pair, sweet warm style, mother holding child's hand in a sunny park, both smiling warmly at camera, soft natural light, 3:4 portrait full body, eye-level. Both have generic anonymous features, coordinated casual outfits in light colors.",
+            "outlinePrompt": "Pure white background, black outline - adult female and small child holding hands, two figures full body. Clean line art silhouette."
+          }
+        ],
+        "活泼": [
+          {
+            "id": "child_parent_lively_001",
+            "name": "父子户外嬉戏",
+            "scene": "户外",
+            "shotType": "full_body",
+            "referenceImages": ["多人_家庭_1.jpg"],
+            "poseRules": ["父亲举起孩子或牵手奔跑", "两人互动自然", "开心大笑"],
+            "modelPrompt": "A young father and child standard model pair, lively playful style, father playfully lifting child outdoors, both laughing joyfully, bright sunny day, clean natural background, 3:4 portrait full body. Both have generic anonymous features, casual outdoor clothes.",
+            "outlinePrompt": "Pure white background, black outline - adult male lifting a child, two figures dynamic pose. Clean line art."
+          }
+        ]
+      }
+    },
+
+    "多人": {
+      "闺蜜": {
+        "甜美": [
+          {
+            "id": "multi_friends_sweet_001",
+            "name": "闺蜜出游合照",
+            "scene": "旅行打卡",
+            "shotType": "full_body",
+            "referenceImages": ["多人_闺蜜_1.jpg", "多人_闺蜜_3.jpg", "多人_闺蜜_5.jpg"],
+            "poseRules": ["两人靠近站在一起", "一人手搭另一人肩膀", "都看镜头微笑"],
+            "modelPrompt": "Two young female standard models, best friends sweet style, standing close together at a scenic travel spot, one with arm around the other's shoulder, both smiling warmly at camera, soft daylight, 3:4 portrait full body, eye-level. Both have generic anonymous features, coordinated cute outfits.",
+            "outlinePrompt": "Pure white background, black outline - two young women standing together, one arm around other's shoulder. Two figures full body silhouette."
+          },
+          {
+            "id": "multi_friends_sweet_002",
+            "name": "海边闺蜜合影",
+            "scene": "海边",
+            "shotType": "full_body",
+            "referenceImages": ["游玩合照", "海边闺蜜照"],
+            "poseRules": ["两人并肩面朝海", "手牵手或挽手臂", "自然放松"],
+            "modelPrompt": "Two young female standard models, sweet best friends, standing side by side facing the ocean, holding hands, soft golden hour beach lighting, 3:4 portrait full body. Both generic anonymous features, summer dresses.",
+            "outlinePrompt": "Pure white background, black outline - two women standing side by side holding hands. Clean line art silhouette."
+          }
+        ],
+        "活泼": [
+          {
+            "id": "multi_friends_lively_001",
+            "name": "闺蜜跳跃合照",
+            "scene": "草地公园",
+            "shotType": "full_body",
+            "referenceImages": ["拒绝呆板 姐妹放开了拍", "出游合照这么拍"],
+            "poseRules": ["两人同时跳起", "手臂张开", "大笑表情"],
+            "modelPrompt": "Two young female standard models, energetic best friends, both jumping up together in a grassy park, arms spread wide, laughing joyfully, bright sunny day, 3:4 portrait full body, waist-level angle. Both generic anonymous features, casual colorful outfits.",
+            "outlinePrompt": "Pure white background, black outline - two women jumping with arms spread, dynamic pose. Two figures silhouette."
+          }
+        ]
+      },
+      "朋友": {
+        "活泼": [
+          {
+            "id": "multi_group_lively_001",
+            "name": "多人朋友合照",
+            "scene": "旅行打卡",
+            "shotType": "full_body",
+            "referenceImages": ["多人_家庭_3.jpg"],
+            "poseRules": ["3-4人站成一排或错落", "互相搭肩或牵手", "都看镜头"],
+            "modelPrompt": "A group of 3 standard models (mixed gender), friends lively style, standing together in a staggered arrangement at a scenic spot, arms around each other's shoulders, all smiling at camera, bright day, 3:4 portrait full body. All generic anonymous features, coordinated casual style.",
+            "outlinePrompt": "Pure white background, black outline - three people standing together, arms linked. Group silhouette line art."
+          }
+        ]
+      }
+    }
+  },
+
+  "generationChecklist": [
+    "✅ 每个pose生成2张图：模特实景图 + 纯轮廓线稿图",
+    "✅ 模特为匿名标准形象，不复制任何真实人物",
+    "✅ 画面风格统一（干净、明亮、专业）",
+    "✅ 尺寸统一3:4竖拍比例",
+    "✅ 背景简洁，便于轮廓提取",
+    "✅ 轮廓线稿为白色背景黑色线条，仅含人体轮廓"
+  ],
+
+  "referenceImageMapping": {
+    "青年女性(563张)": { "mapsToUiAudience": "女性", "scenes": ["咖啡店","城市街拍","夜景","旅行打卡","海边","花丛","草地公园","镜子自拍"] },
+    "成年女性(64张)": { "mapsToUiAudience": "女性", "scenes": ["咖啡店","夜景晚宴","室内氛围","家庭生活","旅行","职业形象","花园"] },
+    "中年女性(40张)": { "mapsToUiAudience": "女性", "scenes": ["公园花园","家庭合影","旅行景点","端庄形象"] },
+    "青年男性(38张)": { "mapsToUiAudience": "男性", "scenes": ["城市","旅行","街景","运动"] },
+    "成年男性(10张)": { "mapsToUiAudience": "男性", "scenes": ["职业"] },
+    "中年男性(10张)": { "mapsToUiAudience": "男性", "scenes": ["家庭"] },
+    "幼儿(20张)": { "mapsToUiAudience": "孩童", "scenes": ["公园","室内"] },
+    "少年(20张)": { "mapsToUiAudience": "孩童", "scenes": ["校园","运动"] },
+    "多人_情侣(10张)": { "mapsToUiAudience": "多人", "mapsToUiType": "情侣" },
+    "多人_闺蜜(28张)": { "mapsToUiAudience": "多人", "mapsToUiType": "闺蜜" },
+    "多人_亲子(121张)": { "mapsToUiAudience": "多人", "mapsToUiType": "亲子" },
+    "多人_家庭(10张)": { "mapsToUiAudience": "多人", "mapsToUiType": "朋友" }
+  }
+}

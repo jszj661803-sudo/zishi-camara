@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI拍摄指导相机 C版UI预览</title>
+  <link rel="stylesheet" href="./ui-c-version.css" />
+</head>
+<body>
+  <main class="phone-shell reference-mode">
+    <img class="reference-screen" src="./assets/ui-c-reference.png" alt="AI拍摄指导相机C版界面" />
+
+    <section class="reference-hotspots" aria-label="C版界面可点击区域">
+      <button class="hotspot guide-hotspot" type="button" data-action="guide" aria-label="查看拍摄提醒"></button>
+      <button class="hotspot style-hotspot style-1" type="button" data-style="帅酷" aria-label="帅酷风格"></button>
+      <button class="hotspot style-hotspot style-2" type="button" data-style="活泼" aria-label="活泼风格"></button>
+      <button class="hotspot style-hotspot style-3" type="button" data-style="通勤" aria-label="通勤风格"></button>
+      <button class="hotspot style-hotspot style-4" type="button" data-style="推荐" aria-label="推荐风格"></button>
+      <button class="hotspot style-hotspot style-5" type="button" data-style="甜美" aria-label="甜美风格"></button>
+      <button class="hotspot style-hotspot style-6" type="button" data-style="轻熟" aria-label="轻熟风格"></button>
+      <button class="hotspot style-hotspot style-7" type="button" data-style="优雅" aria-label="优雅风格"></button>
+      <button class="hotspot pose-hotspot pose-1" type="button" data-pose="推荐姿势1" aria-label="推荐姿势1"></button>
+      <button class="hotspot pose-hotspot pose-2" type="button" data-pose="推荐姿势2" aria-label="推荐姿势2"></button>
+      <button class="hotspot pose-hotspot pose-3" type="button" data-pose="推荐姿势3" aria-label="推荐姿势3"></button>
+      <button class="hotspot pose-hotspot pose-4" type="button" data-pose="推荐姿势4" aria-label="推荐姿势4"></button>
+      <button class="hotspot scene-hotspot" type="button" data-action="scene" aria-label="识别结果"></button>
+      <button class="hotspot capture-hotspot" type="button" data-action="capture" aria-label="拍摄"></button>
+      <button class="hotspot import-hotspot" type="button" data-action="import" aria-label="一键导入推荐图氛围"></button>
+      <button class="hotspot tool-hotspot tool-color" type="button" data-panel="color" aria-label="色彩调整"></button>
+      <button class="hotspot tool-hotspot tool-beauty" type="button" data-panel="beauty" aria-label="美颜美体"></button>
+      <button class="hotspot tool-hotspot tool-creative" type="button" data-panel="creative" aria-label="创意设计"></button>
+    </section>
+
+    <section class="viewfinder legacy-layout" id="viewfinder">
+      <img id="heroPhoto" class="hero-photo" src="./assets/ui-c-scene-grass-user.png" alt="取景画面" />
+      <img id="posePersonLayer" class="pose-template pose-person-layer" src="./assets/ui-c-pose-person-user-viewport.png" alt="推荐姿势模特" />
+      <img id="poseOutlineLayer" class="pose-template pose-outline-layer" src="./assets/ui-c-pose-outline-user-viewport.png" alt="推荐姿势边框" />
+      <div class="view-mask"></div>
+      <div class="pose-line body"></div>
+      <div class="pose-line shoulder"></div>
+      <div class="pose-dot face"></div>
+      <div class="score-ring" id="scoreRing">
+        <span id="scoreValue">85</span><small>分</small>
+        <button class="overlay-close score-close" type="button" data-close-overlay="score" aria-label="关闭评分">×</button>
+      </div>
+      <button class="guide-bubble" id="guideBubble" type="button">
+        <span class="guide-line"><span class="guide-icon">☀</span><span id="lightTip">脸再转向光源一点</span></span>
+        <span class="guide-line"><span class="guide-icon">⬆</span><span id="poseTip">手机略低一点，脚靠近画面底部更显高。</span></span>
+        <span class="guide-line"><span class="guide-icon">▯</span><span id="cameraTip">对齐红色轮廓调整肩膀和手臂</span></span>
+        <span class="overlay-close guide-close" data-close-overlay="guide" aria-label="关闭提示">×</span>
+      </button>
+      <button class="restore-assist overlay-hidden" id="restoreAssist" type="button">辅助</button>
+    </section>
+
+    <section class="control-panel">
+      <nav class="style-tabs" id="styleTabs" aria-label="风格选择">
+        <button type="button">帅酷</button>
+        <button type="button">活泼</button>
+        <button type="button">通勤</button>
+        <button class="active" type="button">推荐</button>
+        <button type="button">甜美</button>
+        <button type="button">轻熟</button>
+        <button type="button">优雅</button>
+      </nav>
+
+      <div class="pose-grid" id="poseGrid">
+        <button class="pose-card" type="button" data-template="./assets/ui-c-pose-template-user-viewport.png" data-title="推荐姿势1" data-tip="身体侧向一点，脸转回看镜头。">
+          <img src="./assets/ui-c-pose-1.png" alt="推荐姿势1" />
+          <span>推荐姿势1</span>
+        </button>
+        <button class="pose-card" type="button" data-template="./assets/ui-c-pose-template-user-viewport.png" data-title="推荐姿势2" data-tip="眼睛看镜头上方一点，表情会更自然。">
+          <img src="./assets/ui-c-pose-2.png" alt="推荐姿势2" />
+          <span>推荐姿势2</span>
+        </button>
+        <button class="pose-card active" type="button" data-template="./assets/ui-c-pose-template-user-viewport.png" data-title="推荐姿势3" data-tip="手机略低一点，脚靠近画面底部更显高。">
+          <img src="./assets/ui-c-pose-3.png" alt="推荐姿势3" />
+          <span>推荐姿势3</span>
+        </button>
+        <button class="pose-card" type="button" data-template="./assets/ui-c-pose-template-user-viewport.png" data-title="推荐姿势4" data-tip="手不要贴身体，留一点空隙更有线条。">
+          <img src="./assets/ui-c-pose-4.png" alt="推荐姿势4" />
+          <span>推荐姿势4</span>
+        </button>
+      </div>
+
+      <div class="action-row">
+        <button class="pill scene-picker-btn" type="button" id="sceneBtn">
+          <span class="scene-label">姿势库</span>
+          <span class="scene-value" id="sceneValue">女性 · 单人</span>
+        </button>
+        <button class="capture-btn" type="button" id="captureBtn" aria-label="拍摄"></button>
+        <button class="pill opacity-trigger" type="button" id="opacityBtn">模特透明度</button>
+      </div>
+
+      <section class="opacity-picker overlay-hidden" id="opacityPicker" aria-label="透明度调节">
+        <label>
+          <span>模特透明</span>
+          <input id="modelOpacityRange" type="range" min="0" max="100" value="20" />
+          <output id="modelOpacityValue">20%</output>
+        </label>
+        <label>
+          <span>边框透明</span>
+          <input id="outlineOpacityRange" type="range" min="0" max="100" value="70" />
+          <output id="outlineOpacityValue">70%</output>
+        </label>
+      </section>
+
+      <section class="audience-picker overlay-hidden" id="audiencePicker" aria-label="姿势库选择">
+        <div class="picker-column">
+          <strong>人群</strong>
+          <button type="button" data-picker="group" data-value="孩童">孩童</button>
+          <button class="active" type="button" data-picker="group" data-value="女性">女性</button>
+          <button type="button" data-picker="group" data-value="男性">男性</button>
+          <button type="button" data-picker="group" data-value="多人">多人</button>
+        </div>
+        <div class="picker-column">
+          <strong>类型</strong>
+          <button class="active" type="button" data-picker="type" data-value="单人">单人</button>
+          <button type="button" data-picker="type" data-value="情侣">情侣</button>
+          <button type="button" data-picker="type" data-value="闺蜜">闺蜜</button>
+          <button type="button" data-picker="type" data-value="亲子">亲子</button>
+          <button type="button" data-picker="type" data-value="朋友">朋友</button>
+        </div>
+      </section>
+
+      <div class="bottom-tools">
+        <button type="button" data-panel="color">色彩调整</button>
+        <button type="button" data-panel="beauty">美颜美体</button>
+        <button type="button" data-panel="creative">创意设计</button>
+      </div>
+    </section>
+
+    <section class="drawer" id="drawer" aria-live="polite">
+      <div class="drawer-head">
+        <strong id="drawerTitle">美颜美体</strong>
+        <button type="button" id="closeDrawer">关闭</button>
+      </div>
+      <div class="drawer-content" id="drawerContent"></div>
+    </section>
+
+    <div class="toast" id="toast">已更新推荐</div>
+  </main>
+
+  <script src="./ui-c-version.js"></script>
+</body>
+</html>

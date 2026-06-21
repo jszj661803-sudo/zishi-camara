@@ -1,0 +1,596 @@
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --ink: #171717;
+  --muted: #747780;
+  --line: rgba(35, 35, 35, 0.12);
+  --brand: #ff5f7a;
+  --brand-dark: #e84967;
+  --mint: #31e7cf;
+  --score: #ffe66d;
+  --good: #2f9d62;
+  --warn: #f4b63d;
+  --bad: #ff5b4f;
+  --panel: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: minmax(420px, 58dvh) 1fr;
+}
+
+.camera-stage {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+}
+
+#cameraVideo,
+.blur-preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blur-preview {
+  pointer-events: none;
+  opacity: 0;
+  backdrop-filter: blur(0);
+  background: rgba(255, 255, 255, 0.01);
+  -webkit-backdrop-filter: blur(0);
+  transition: opacity 0.2s ease, backdrop-filter 0.2s ease;
+}
+
+.hidden-canvas {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.grid-lines span,
+.horizon-line,
+.person-frame,
+.body-line,
+.shoulder-line,
+.hip-line,
+.leg-line,
+.foot-line {
+  position: absolute;
+}
+
+.grid-lines[data-grid="on"] span:nth-child(1) {
+  left: 33.33%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(49, 231, 207, 0.7);
+}
+
+.grid-lines[data-grid="on"] span:nth-child(2) {
+  left: 66.66%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(49, 231, 207, 0.7);
+}
+
+.grid-lines[data-grid="on"] span:nth-child(3) {
+  top: 33.33%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(49, 231, 207, 0.7);
+}
+
+.grid-lines[data-grid="on"] span:nth-child(4) {
+  top: 66.66%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(49, 231, 207, 0.7);
+}
+
+.horizon-line {
+  left: 12%;
+  right: 12%;
+  top: 52%;
+  border-top: 2px dashed rgba(49, 231, 207, 0.9);
+}
+
+.person-frame {
+  left: 30%;
+  top: 13%;
+  width: 40%;
+  height: 77%;
+  border: 2px solid rgba(49, 231, 207, 0.9);
+  border-radius: 999px 999px 38px 38px;
+}
+
+.head-dot {
+  position: absolute;
+  left: 50%;
+  top: 7%;
+  width: 54px;
+  height: 54px;
+  transform: translateX(-50%);
+  border: 2px solid rgba(255, 230, 109, 0.96);
+  border-radius: 50%;
+}
+
+.body-line {
+  left: 50%;
+  top: 22%;
+  height: 39%;
+  width: 2px;
+  transform: translateX(-50%) rotate(-8deg);
+  background: rgba(255, 230, 109, 0.96);
+}
+
+.shoulder-line {
+  left: 25%;
+  right: 25%;
+  top: 27%;
+  height: 2px;
+  transform: rotate(-8deg);
+  background: rgba(255, 230, 109, 0.96);
+}
+
+.hip-line {
+  left: 31%;
+  right: 29%;
+  top: 58%;
+  height: 2px;
+  transform: rotate(-5deg);
+  background: rgba(255, 230, 109, 0.96);
+}
+
+.leg-line {
+  top: 59%;
+  height: 28%;
+  width: 2px;
+  background: rgba(255, 230, 109, 0.96);
+  transform-origin: top;
+}
+
+.leg-line.left {
+  left: 46%;
+  transform: rotate(10deg);
+}
+
+.leg-line.right {
+  left: 54%;
+  transform: rotate(-16deg);
+}
+
+.face-arrow {
+  position: absolute;
+  left: 58%;
+  top: 8%;
+  color: var(--score);
+  font-size: 30px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.eye-dot,
+.hand-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 5px rgba(255, 95, 122, 0.34);
+}
+
+.eye-dot {
+  left: 64%;
+  top: 18%;
+}
+
+.hand-dot.left {
+  left: 20%;
+  top: 43%;
+}
+
+.hand-dot.right {
+  right: 18%;
+  top: 51%;
+}
+
+.foot-line {
+  left: 18%;
+  right: 18%;
+  bottom: 7%;
+  border-bottom: 3px solid rgba(49, 231, 207, 0.94);
+}
+
+.camera-topbar {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: calc(12px + env(safe-area-inset-top));
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.live-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.live-chip span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 5px rgba(49, 231, 207, 0.18);
+}
+
+.score-ring {
+  position: absolute;
+  right: 54px;
+  top: 0;
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #201a05;
+  background: radial-gradient(circle at 50% 50%, #fff7b0 0 48%, var(--score) 49% 100%);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.score-ring strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 27px;
+  line-height: 1;
+}
+
+.score-ring span {
+  position: absolute;
+  bottom: 13px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.mini-label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.camera-topbar .mini-label {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.38);
+  color: #fff;
+  font-size: 24px;
+}
+
+.camera-state {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  font-size: 13px;
+}
+
+.control-panel {
+  position: relative;
+  z-index: 2;
+  margin-top: -18px;
+  padding: 12px 12px calc(16px + env(safe-area-inset-bottom));
+  overflow: auto;
+  border-radius: 8px 8px 0 0;
+  background: #fff;
+  box-shadow: 0 -14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.mode-tabs {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.mode-tabs button {
+  min-height: 38px;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 8px;
+  background: #f6f7f9;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.mode-tabs button.active {
+  color: #fff;
+  background: var(--brand);
+  border-color: var(--brand);
+  box-shadow: 0 8px 18px rgba(255, 95, 122, 0.24);
+}
+
+.recommend-card,
+.beauty-panel {
+  background: var(--panel);
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(20, 20, 20, 0.06);
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+h1 {
+  margin: 2px 0 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.score-badge {
+  min-width: 82px;
+  text-align: center;
+  padding: 7px 8px;
+  border-radius: 8px;
+  color: #2d2200;
+  background: var(--score);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.score-badge.good {
+  color: #fff;
+  background: var(--good);
+}
+
+.score-badge.bad {
+  color: #fff;
+  background: var(--bad);
+}
+
+.score-badge.waiting {
+  color: #2d2200;
+  background: var(--score);
+}
+
+.pose-row {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+#poseImage {
+  width: 112px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f0f1f4;
+  box-shadow: 0 6px 16px rgba(20, 20, 20, 0.12);
+}
+
+.tips-box {
+  min-width: 0;
+}
+
+#mainTip {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+#tipsList {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.diagnosis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.diagnosis div {
+  padding: 8px 6px;
+  border-radius: 8px;
+  background: #f7f8fa;
+  text-align: center;
+}
+
+.diagnosis span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.diagnosis b {
+  font-size: 18px;
+}
+
+.diagnosis-text {
+  margin-top: 10px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  background: rgba(255, 95, 122, 0.09);
+  color: #7d2b3c;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.settings-grid label,
+.slider-list label {
+  display: grid;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+select {
+  width: 100%;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f7f8fa;
+  color: var(--ink);
+  padding: 0 8px;
+}
+
+.switch-line {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f7f8fa;
+}
+
+.switch-line input {
+  width: 20px;
+  height: 20px;
+}
+
+.beauty-panel {
+  margin-top: 10px;
+}
+
+.beauty-panel summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.slider-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 12px;
+  margin-top: 10px;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--brand);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.actions button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.actions .secondary {
+  background: #f7f8fa;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.actions .primary {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(255, 95, 122, 0.28);
+}
+
+body[data-mode="风景"] .person-frame,
+body[data-mode="静物"] .person-frame,
+body[data-mode="室内"] .person-frame,
+body[data-mode="运动"] .person-frame {
+  opacity: 0.18;
+}
+
+body[data-pose-lines="off"] .person-frame,
+body[data-grid-lines="off"] .grid-lines span {
+  display: none;
+}
+
+@media (min-width: 820px) {
+  .app-shell {
+    max-width: 430px;
+    min-height: 860px;
+    margin: 0 auto;
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    background: var(--bg);
+  }
+}
+
+@media (max-width: 374px) {
+  .mode-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .settings-grid,
+  .slider-list {
+    grid-template-columns: 1fr;
+  }
+}
