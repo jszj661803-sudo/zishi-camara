@@ -998,12 +998,13 @@ $('poseGrid').addEventListener('click', function(e) {
   var outlineLayer = $('poseOutlineLayer');
   var newModelSrc = card.dataset.imageSrc || '';
   var newOutlineSrc = card.dataset.outlineSrc || '';
-  if (!newOutlineSrc && newModelSrc) newOutlineSrc = newModelSrc;
+  // 只有有专用轮廓图时才显示轮廓层，绝不把模特图叠到轮廓层
 
-  // 第1步：立即清空两个图层
-  personLayer.src = '';
+  // 第1步：用透明占位图强制清空两个图层
+  var BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+  personLayer.src = BLANK;
   personLayer.style.opacity = '0';
-  outlineLayer.src = '';
+  outlineLayer.src = BLANK;
   outlineLayer.style.opacity = '0';
 
   // 第2步：等一帧确保浏览器清掉旧画面
@@ -1016,8 +1017,13 @@ $('poseGrid').addEventListener('click', function(e) {
         personLayer.style.opacity = (S.modelOpacity / 100);
       };
       pm.src = newModelSrc;
+      // 缓存图片 onload 可能在设 src 前就触发完毕
+      if (pm.complete) {
+        personLayer.src = newModelSrc;
+        personLayer.style.opacity = (S.modelOpacity / 100);
+      }
     }
-    // 第4步：预加载轮廓图
+    // 第4步：预加载轮廓图（仅当有专用轮廓时）
     if (newOutlineSrc) {
       var po = new Image();
       po.onload = function() {
@@ -1025,6 +1031,10 @@ $('poseGrid').addEventListener('click', function(e) {
         outlineLayer.style.opacity = (S.outlineOpacity / 100);
       };
       po.src = newOutlineSrc;
+      if (po.complete) {
+        outlineLayer.src = newOutlineSrc;
+        outlineLayer.style.opacity = (S.outlineOpacity / 100);
+      }
     }
   });
 
