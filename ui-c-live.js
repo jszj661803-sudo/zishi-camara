@@ -140,10 +140,11 @@ function getCardsForStyle(activeStyle) {
     images = shuffleArray(images).slice(0, 4);
     images.forEach(function(im) {
       var rel = im.rel_path ? im.rel_path.replace(/\\/g, '/') : '';
+      var relThumb = im.rel_path_thumb ? im.rel_path_thumb.replace(/\\/g, '/') : '';
       var relCutout = im.rel_path_cutout ? im.rel_path_cutout.replace(/\\/g, '/') : '';
       var relOutline = im.rel_path_outline ? im.rel_path_outline.replace(/\\/g, '/') : '';
       items.push({
-        img: rel ? './data/generated-models/' + rel : '',
+        img: relThumb ? './data/generated-models/' + relThumb : (rel ? './data/generated-models/' + rel : ''),
         cutout: relCutout ? './data/generated-models/' + relCutout : '',
         outline: relOutline ? './data/generated-models/' + relOutline : '',
         name: im.scene || im.name || '',
@@ -174,8 +175,9 @@ function getCardsForStyle(activeStyle) {
       images = shuffleArray(images);
       for (var k = 0; k < Math.min(images.length, items.length); k++) {
         var rel = images[k].rel_path ? images[k].rel_path.replace(/\\/g, '/') : '';
+        var relThumb2 = images[k].rel_path_thumb ? images[k].rel_path_thumb.replace(/\\/g, '/') : '';
         if (rel) items[k] = {
-          img: './data/generated-models/' + rel,
+          img: relThumb2 ? './data/generated-models/' + relThumb2 : './data/generated-models/' + rel,
           name: images[k].scene || images[k].name || '',
           tip: (images[k].scene || '') + ' · ' + (images[k].style || '') + '风格',
           style: images[k].style
