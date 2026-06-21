@@ -949,8 +949,9 @@ var STYLE_FACE_EYE = {
 
 // ============ UI Interactions ============
 function syncPoseOpacity() {
-  $('posePersonLayer').style.setProperty('--model-opacity', S.modelOpacity/100);
-  $('viewfinder').style.setProperty('--model-opacity', S.modelOpacity/100);
+  // 直接设置模特图层透明度（不用CSS变量，避免被其他规则覆盖）
+  $('posePersonLayer').style.opacity = S.modelOpacity / 100;
+  // 边框透明度走CSS变量（工作正常）
   $('viewfinder').style.setProperty('--outline-opacity', S.outlineOpacity/100);
   $('modelOpacityRange').value = S.modelOpacity;
   $('outlineOpacityRange').value = S.outlineOpacity;
@@ -992,14 +993,18 @@ $('poseGrid').addEventListener('click', function(e) {
   card.classList.add('active');
   S.activePose = card.dataset.title;
   if ($('poseGuide')) $('poseGuide').textContent = card.dataset.tip;
-  // 更新取景框覆盖层：模特图 + 轮廓图联动
+  // 更新取景框覆盖层：先隐藏旧图，消除残影
   if (card.dataset.imageSrc) {
-    $('posePersonLayer').src = card.dataset.imageSrc;
+    var personLayer = $('posePersonLayer');
+    personLayer.style.opacity = '0';  // 即刻隐藏旧图
+    personLayer.src = card.dataset.imageSrc;
+    personLayer.onload = function() {
+      personLayer.style.opacity = (S.modelOpacity / 100);  // 新图就绪，恢复当前透明度
+    };
   }
   if (card.dataset.outlineSrc) {
     $('poseOutlineLayer').src = card.dataset.outlineSrc;
   } else if (card.dataset.imageSrc) {
-    // 没有专用轮廓图时用模特图代替（CSS opacity 会区分）
     $('poseOutlineLayer').src = card.dataset.imageSrc;
   }
   showToast(card.dataset.title);
