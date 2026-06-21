@@ -993,14 +993,18 @@ $('poseGrid').addEventListener('click', function(e) {
   card.classList.add('active');
   S.activePose = card.dataset.title;
   if ($('poseGuide')) $('poseGuide').textContent = card.dataset.tip;
-  // 更新取景框覆盖层：先隐藏旧图，消除残影
+  // 更新取景框覆盖层：预加载消除残影
   if (card.dataset.imageSrc) {
     var personLayer = $('posePersonLayer');
-    personLayer.style.opacity = '0';  // 即刻隐藏旧图
-    personLayer.src = card.dataset.imageSrc;
-    personLayer.onload = function() {
-      personLayer.style.opacity = (S.modelOpacity / 100);  // 新图就绪，恢复当前透明度
+    var newSrc = card.dataset.imageSrc;
+    personLayer.style.opacity = '0';  // 先隐藏
+    // 用预加载：旧图隐藏 → 内存加载 → 就绪后才贴到屏上
+    var preload = new Image();
+    preload.onload = function() {
+      personLayer.src = newSrc;
+      personLayer.style.opacity = (S.modelOpacity / 100);
     };
+    preload.src = newSrc;
   }
   if (card.dataset.outlineSrc) {
     $('poseOutlineLayer').src = card.dataset.outlineSrc;
