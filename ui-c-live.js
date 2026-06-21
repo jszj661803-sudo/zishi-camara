@@ -984,7 +984,7 @@ $('styleTabs').addEventListener('click', function(e) {
   showToast('Style: ' + btn.textContent);
 });
 
-// Pose cards
+// Pose cards（彻底消除切卡残影：双图层同步清理 + 预加载）
 $('poseGrid').addEventListener('click', function(e) {
   var card = e.target.closest('.pose-card');
   if (!card) return;
@@ -993,24 +993,41 @@ $('poseGrid').addEventListener('click', function(e) {
   card.classList.add('active');
   S.activePose = card.dataset.title;
   if ($('poseGuide')) $('poseGuide').textContent = card.dataset.tip;
-  // 更新取景框覆盖层：预加载消除残影
-  if (card.dataset.imageSrc) {
-    var personLayer = $('posePersonLayer');
-    var newSrc = card.dataset.imageSrc;
-    personLayer.style.opacity = '0';  // 先隐藏
-    // 用预加载：旧图隐藏 → 内存加载 → 就绪后才贴到屏上
-    var preload = new Image();
-    preload.onload = function() {
-      personLayer.src = newSrc;
-      personLayer.style.opacity = (S.modelOpacity / 100);
-    };
-    preload.src = newSrc;
-  }
-  if (card.dataset.outlineSrc) {
-    $('poseOutlineLayer').src = card.dataset.outlineSrc;
-  } else if (card.dataset.imageSrc) {
-    $('poseOutlineLayer').src = card.dataset.imageSrc;
-  }
+
+  var personLayer = $('posePersonLayer');
+  var outlineLayer = $('poseOutlineLayer');
+  var newModelSrc = card.dataset.imageSrc || '';
+  var newOutlineSrc = card.dataset.outlineSrc || '';
+  if (!newOutlineSrc && newModelSrc) newOutlineSrc = newModelSrc;
+
+  // 第1步：立即清空两个图层
+  personLayer.src = '';
+  personLayer.style.opacity = '0';
+  outlineLayer.src = '';
+  outlineLayer.style.opacity = '0';
+
+  // 第2步：等一帧确保浏览器清掉旧画面
+  requestAnimationFrame(function() {
+    // 第3步：后台预加载模特图
+    if (newModelSrc) {
+      var pm = new Image();
+      pm.onload = function() {
+        personLayer.src = newModelSrc;
+        personLayer.style.opacity = (S.modelOpacity / 100);
+      };
+      pm.src = newModelSrc;
+    }
+    // 第4步：预加载轮廓图
+    if (newOutlineSrc) {
+      var po = new Image();
+      po.onload = function() {
+        outlineLayer.src = newOutlineSrc;
+        outlineLayer.style.opacity = (S.outlineOpacity / 100);
+      };
+      po.src = newOutlineSrc;
+    }
+  });
+
   showToast(card.dataset.title);
 });
 
