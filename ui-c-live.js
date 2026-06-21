@@ -984,7 +984,7 @@ $('styleTabs').addEventListener('click', function(e) {
   showToast('Style: ' + btn.textContent);
 });
 
-// Pose cards（彻底消除切卡残影：双图层同步清理 + 预加载）
+// Pose cards — 简洁可靠：直接替换 src，CSS transition 处理过渡
 $('poseGrid').addEventListener('click', function(e) {
   var card = e.target.closest('.pose-card');
   if (!card) return;
@@ -994,49 +994,12 @@ $('poseGrid').addEventListener('click', function(e) {
   S.activePose = card.dataset.title;
   if ($('poseGuide')) $('poseGuide').textContent = card.dataset.tip;
 
-  var personLayer = $('posePersonLayer');
-  var outlineLayer = $('poseOutlineLayer');
-  var newModelSrc = card.dataset.imageSrc || '';
-  var newOutlineSrc = card.dataset.outlineSrc || '';
-  // 只有有专用轮廓图时才显示轮廓层，绝不把模特图叠到轮廓层
-
-  // 第1步：用透明占位图强制清空两个图层
-  var BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-  personLayer.src = BLANK;
-  personLayer.style.opacity = '0';
-  outlineLayer.src = BLANK;
-  outlineLayer.style.opacity = '0';
-
-  // 第2步：等一帧确保浏览器清掉旧画面
-  requestAnimationFrame(function() {
-    // 第3步：后台预加载模特图
-    if (newModelSrc) {
-      var pm = new Image();
-      pm.onload = function() {
-        personLayer.src = newModelSrc;
-        personLayer.style.opacity = (S.modelOpacity / 100);
-      };
-      pm.src = newModelSrc;
-      // 缓存图片 onload 可能在设 src 前就触发完毕
-      if (pm.complete) {
-        personLayer.src = newModelSrc;
-        personLayer.style.opacity = (S.modelOpacity / 100);
-      }
-    }
-    // 第4步：预加载轮廓图（仅当有专用轮廓时）
-    if (newOutlineSrc) {
-      var po = new Image();
-      po.onload = function() {
-        outlineLayer.src = newOutlineSrc;
-        outlineLayer.style.opacity = (S.outlineOpacity / 100);
-      };
-      po.src = newOutlineSrc;
-      if (po.complete) {
-        outlineLayer.src = newOutlineSrc;
-        outlineLayer.style.opacity = (S.outlineOpacity / 100);
-      }
-    }
-  });
+  // 模特图：直接设 src，利用 CSS transition 0.15s 平滑切换
+  if (card.dataset.imageSrc) {
+    $('posePersonLayer').src = card.dataset.imageSrc;
+  }
+  // 轮廓图：有就用，没有就清空
+  $('poseOutlineLayer').src = card.dataset.outlineSrc || '';
 
   showToast(card.dataset.title);
 });

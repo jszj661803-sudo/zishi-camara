@@ -172,10 +172,12 @@ button {
 
 .pose-person-layer {
   opacity: var(--model-opacity, .2);
+  transition: opacity .18s ease;
 }
 
 .pose-outline-layer {
   opacity: var(--outline-opacity, .7);
+  transition: opacity .18s ease;
 }
 
 .pose-template.pulse,
